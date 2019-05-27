@@ -18,114 +18,110 @@
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div id="navbardiv">
-            <nav class='navbar sticky-top navbar-expand-md navbar-light bg-white row' id="divnav">
+    <nav class='navbar sticky-top navbar-expand-md navbar-light bg-white row' id="divnav">
+        <!--   Menu toggle    -->
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#divinnav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-                <!--   Menu toggle    -->
-                <button class="navbar-toggler" data-toggle="collapse" data-target="#divinnav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <!-- Location indicator mobile -->
-                <div class="d-block d-md-none">
-                    <a class="navbar-brand mb-0 h1" href="#" id="locind">
-                        Home
-                    </a>
-                </div>
-
-                <!-- NavBrand Desktop  -->
-                <div class="col-3 d-none d-md-block " style="padding:5px">
-                    <a class="navbar-brand" href="home.html" id="brandlogo">
-                        <img class="rounded" src="images/Logo.png">
-                    </a>
-                    <a class="navbar-brand mb-0 h1 ml-3" href="home.html" id="brandlogo">
-                        MovieThtr
-                    </a>
-                </div>
-
-                <!-- NavBrand  Mobile -->
-                <div class="d-block d-md-none">
-                    <a class="navbar-brand" href="home.html" id="brandlogo">
-                        <img class="rounded" style="width:65px; height:40px" src="images/Logo.png">
-                    </a>
-                </div>
-
-                <!-- Empty div to center logo in mobile -->
-                <div class="d-block d-md-none">
-                    <a class="navbar-brand mb-0 text-white d-block d-md-none" id="locindempty">
-                        Home
-                    </a>
-                </div>
-
-                <!-- Search Mobile -->
-                <div class="d-block d-md-none" id="searchBtn">
-                    <button class="btn btn-outline-dark" type="submit"><i class="fa fa-search"
-                            aria-hidden="true"></i></button>
-                </div>
-
-                <!-- Menu items -->
-                <div class='col-6 collapse navbar-collapse row px-0 ml-5' id='divinnav'>
-                    <ul class="col-12 navbar-nav row px-0" id='navitemholder'>
-                        <li class="nav-item col-2">
-                            <a class="nav-link text-dark" href="home.html" id="navbarDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Home
-                            </a>
-                        </li>
-
-                        <li class="col-3 nav-item dropdown px-2">
-                            <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Categories
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="allMovies.html">All Categories</a>
-                                <a class="dropdown-item" href="allMovies.html">Most Popular</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="allMovies.html">Action</a>
-                                <a class="dropdown-item" href="allMovies.html">Romantic</a>
-                                <a class="dropdown-item" href="allMovies.html">Superhero</a>
-                                <a class="dropdown-item" href="allMovies.html">Comedy</a>
-                                <a class="dropdown-item" href="allMovies.html">Drama</a>
-                            </div>
-                        </li>
-                        <li class="col-3 nav-item dropdown px-2">
-                            <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Locations
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="locations.html">Belgrade</a>
-                                <a class="dropdown-item" href="locations.html">Kragujevac</a>
-                                <a class="dropdown-item" href="locations.html">Kraljevo</a>
-                                <a class="dropdown-item" href="locations.html">Novi sad</a>
-                                <a class="dropdown-item" href="locations.html">Nis</a>
-                                <a class="dropdown-item" href="locations.html">Pristina</a>
-                                <a class="dropdown-item" href="locations.html">Subotica</a>
-                            </div>
-                        </li>
-                        <li class="col-3 nav-item px-2">
-                            <a class="nav-link text-dark" href="aboutUs.html" id="navbarDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                About us
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Search Desktop -->
-                <div class="col-3 d-none d-md-block">
-                    <form class="form-inline">
-                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-danger ml-1" type="submit"><i class="fa fa-search"
-                                aria-hidden="true"></i></button>
-                    </form>
-                </div>
-
-            </nav>
+        <!-- Location indicator mobile -->
+        <div class="d-block d-md-none">
+            <a class="navbar-brand mb-0 h1" href="#" id="locind">
+                Home
+            </a>
         </div>
 
+        <!-- NavBrand Desktop  -->
+        <div class="col-3 d-none d-md-block pl-4" style="padding:5px">
+            <a class="navbar-brand" href="home.html" id="brandlogo">
+                <img class="rounded" src="images/Logo.png">
+            </a>
+            <a class="navbar-brand mb-0 h1 ml-3" href="home.html" id="brandlogo">
+                MovieThtr
+            </a>
+        </div>
+
+        <!-- NavBrand  Mobile -->
+        <div class="d-block d-md-none">
+            <a class="navbar-brand" href="home.html" id="brandlogo">
+                <img class="rounded" style="width:65px; height:40px" src="images/Logo.png">
+            </a>
+        </div>
+
+        <!-- Empty div to center logo in mobile -->
+        <div class="d-block d-md-none">
+            <a class="navbar-brand mb-0 text-white d-block d-md-none" id="locindempty">
+                Home
+            </a>
+        </div>
+
+        <!-- Search Mobile -->
+        <div class="d-block d-md-none" id="searchBtn">
+            <button class="btn btn-outline-dark" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+        </div>
+
+        <!-- Menu items -->
+        <div class='col-6 collapse navbar-collapse row px-0 ml-5' id='divinnav'>
+            <ul class="col-12 navbar-nav row px-0" id='navitemholder'>
+                <li class="nav-item col-2">
+                    <a class="nav-link text-dark" href="home.html" id="navbarDropdown" role="button"
+                        aria-haspopup="true" aria-expanded="false">
+                        Home
+                    </a>
+                </li>
+
+                <li class="col-3 nav-item dropdown px-2">
+                    <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Categories
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="allMovies.html">All Categories</a>
+                        <a class="dropdown-item" href="allMovies.html">Most Popular</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="allMovies.html">Action</a>
+                        <a class="dropdown-item" href="allMovies.html">Romantic</a>
+                        <a class="dropdown-item" href="allMovies.html">Superhero</a>
+                        <a class="dropdown-item" href="allMovies.html">Comedy</a>
+                        <a class="dropdown-item" href="allMovies.html">Drama</a>
+                    </div>
+                </li>
+                <li class="col-3 nav-item dropdown px-2">
+                    <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Locations
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="locations.html">Belgrade</a>
+                        <a class="dropdown-item" href="locations.html">Kragujevac</a>
+                        <a class="dropdown-item" href="locations.html">Kraljevo</a>
+                        <a class="dropdown-item" href="locations.html">Novi sad</a>
+                        <a class="dropdown-item" href="locations.html">Nis</a>
+                        <a class="dropdown-item" href="locations.html">Pristina</a>
+                        <a class="dropdown-item" href="locations.html">Subotica</a>
+                    </div>
+                </li>
+                <li class="col-3 nav-item px-2">
+                    <a class="nav-link text-dark" href="aboutUs.html" id="navbarDropdown" role="button"
+                        aria-haspopup="true" aria-expanded="false">
+                        About us
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Search Desktop -->
+        <div class="col-3 d-none d-md-block">
+            <form class="form-inline">
+                <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-danger ml-1" type="submit"><i class="fa fa-search"
+                        aria-hidden="true"></i></button>
+            </form>
+        </div>
+
+    </nav>
+
+    <div class="container-fluid">
         <div class="bg-light" id="CarouselDiv">
             <!-- Upper row -->
             <div class="row">
@@ -302,12 +298,12 @@
                         <div class="text-center justify-content-center d-none d-md-block">
                             <div class="row text-center justify-content-center">
                                 <!-- Slider card -->
-                                
+
                                 <div class="col-2 mx-2">
                                     <div class="card">
                                         <a href="description.html">
-                                            <img class="card-img-top rounded img-flow"
-                                                src="images/BooksmartPoster.jpg" alt="Card image cap"></a>
+                                            <img class="card-img-top rounded img-flow" src="images/BooksmartPoster.jpg"
+                                                alt="Card image cap"></a>
                                         <div class="card-body pt-0">
                                             <h5 class="card-title my-2">Booksmart</h5>
                                             <p class="card-text my-0">PG-13
@@ -320,38 +316,38 @@
                                     </div>
                                 </div>
                                 <div class="col-2 mx-2">
-                                        <div class="card">
-                                            <a href="description.html">
-                                                <img class="card-img rounded img-flow" src="images/DogsJourneyPoster.jpg"
-                                                    alt="Card image cap"></a>
-                                            <div class="card-body pt-0">
-                                                <h5 class="card-title my-2">Dog Journey</h5>
-                                                <p class="card-text my-0">PG-13
-                                                </p>
-                                                <p class="card-text my-0">Release date: 25.05.
-                                                </p>
-                                                <a class="btn btn-danger text-light my-1  font-weight-bold"
-                                                    href="buyTickets.html">Buy Tickets</a>
-                                            </div>
+                                    <div class="card">
+                                        <a href="description.html">
+                                            <img class="card-img rounded img-flow" src="images/DogsJourneyPoster.jpg"
+                                                alt="Card image cap"></a>
+                                        <div class="card-body pt-0">
+                                            <h5 class="card-title my-2">Dog Journey</h5>
+                                            <p class="card-text my-0">PG-13
+                                            </p>
+                                            <p class="card-text my-0">Release date: 25.05.
+                                            </p>
+                                            <a class="btn btn-danger text-light my-1  font-weight-bold"
+                                                href="buyTickets.html">Buy Tickets</a>
                                         </div>
                                     </div>
-                                    <div class="col-2 mx-2">
-                                            <div class="card">
-                                                <a href="description.html">
-                                                    <img class="card-img-top rounded img-flow" src="images/JohnWickPoster.jpeg"
-                                                        alt="Card image cap"></a>
-                                                <div class="card-body pt-0">
-                                                    <h5 class="card-title my-2">John Wick 3</h5>
-                                                    <p class="card-text my-0">R
-                                                    </p>
-                                                    <p class="card-text my-0">Release date: 25.05.
-                                                    </p>
-                                                    <a class="btn btn-danger text-light my-1  font-weight-bold"
-                                                        href="buyTickets.html">Buy Tickets</a>
-                                                </div>
-                                            </div>
+                                </div>
+                                <div class="col-2 mx-2">
+                                    <div class="card">
+                                        <a href="description.html">
+                                            <img class="card-img-top rounded img-flow" src="images/JohnWickPoster.jpeg"
+                                                alt="Card image cap"></a>
+                                        <div class="card-body pt-0">
+                                            <h5 class="card-title my-2">John Wick 3</h5>
+                                            <p class="card-text my-0">R
+                                            </p>
+                                            <p class="card-text my-0">Release date: 25.05.
+                                            </p>
+                                            <a class="btn btn-danger text-light my-1  font-weight-bold"
+                                                href="buyTickets.html">Buy Tickets</a>
                                         </div>
-                                
+                                    </div>
+                                </div>
+
                                 <div class="col-2 mx-2">
                                     <div class="card">
                                         <a href="description.html">
@@ -370,24 +366,24 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="col-2 mx-2">
-                                        <div class="card">
-                                            <a href="description.html">
-    
-                                                <img class="card-img-top rounded img-flow" src="images/StarWarsPosterR.jpeg"
-                                                    alt="Card image cap"></a>
-                                            <div class="card-body pt-0">
-                                                <h5 class="card-title my-2">Star Wars</h5>
-                                                <p class="card-text my-0">PG-13
-                                                </p>
-                                                <p class="card-text my-0">Release date: 25.05.
-                                                </p>
-                                                <a class="btn btn-danger text-light my-1  font-weight-bold"
-                                                    href="buyTickets.html">Buy Tickets</a>
-                                            </div>
+                                    <div class="card">
+                                        <a href="description.html">
+
+                                            <img class="card-img-top rounded img-flow" src="images/StarWarsPosterR.jpeg"
+                                                alt="Card image cap"></a>
+                                        <div class="card-body pt-0">
+                                            <h5 class="card-title my-2">Star Wars</h5>
+                                            <p class="card-text my-0">PG-13
+                                            </p>
+                                            <p class="card-text my-0">Release date: 25.05.
+                                            </p>
+                                            <a class="btn btn-danger text-light my-1  font-weight-bold"
+                                                href="buyTickets.html">Buy Tickets</a>
                                         </div>
                                     </div>
+                                </div>
                             </div>
                         </div>
                         <!-- page mobile -->
@@ -515,9 +511,7 @@
                 </div>
             </div>
         </div>
-
     </div>
-
 </body>
 
 </html>
