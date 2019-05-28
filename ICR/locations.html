@@ -1,6 +1,8 @@
 <html lang="en">
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <meta charset="UTF-8">
     <!-- CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -14,10 +16,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
-    <title>Lcoations</title>
+    <title>Locations</title>
 </head>
 
 <body>
+    <!-- TODO selector -->
     <nav class='navbar sticky-top navbar-expand-md navbar-light bg-white row shadow' id="divnav">
 
         <!--   Menu toggle    -->
@@ -28,7 +31,7 @@
         <!-- Location indicator mobile -->
         <div class="d-block d-md-none">
             <a class="navbar-brand mb-0 h1" href="#" id="locind">
-                Home
+                    Theatre
             </a>
         </div>
 
@@ -38,7 +41,7 @@
                 <img class="rounded" src="images/Logo.png">
             </a>
             <a class="navbar-brand mb-0 h1 ml-3" href="home.html" id="brandlogo">
-                MovieThtr
+                Theatre
             </a>
         </div>
 
@@ -52,7 +55,7 @@
         <!-- Empty div to center logo in mobile -->
         <div class="d-block d-md-none">
             <a class="navbar-brand mb-0 text-white d-block d-md-none" id="locindempty">
-                Home
+                Movies
             </a>
         </div>
 
@@ -122,6 +125,405 @@
 
     </nav>
 
+    <!-- Page body -->
+    <div class="container-fluid row text-center my-4 mx-0 pr-0 " id="pageBody">
+
+        <!-- Category Mobile -->
+        <div class=" d-block d-md-none col-12 form-group py-1">
+            <select class="form-control-lg bg-light btn-block" name="" id="categorySpinner">
+                <option>Belgrade</option>
+                <option>Kragujevac</option>
+                <option>Kraljevo</option>
+                <option>Novi sad</option>
+                <option>Nis</option>
+                <option>Pristina</option>
+                <option>Subotica</option>
+
+            </select>
+        </div>
+
+        <!-- City selector -->
+        <div class="d-none d-md-block col-md-3" id="CategoryList">
+            <h3 class="py-3">Cities</h3>
+            <ul class="list-group">
+                <button type="button"
+                    class="btn-light list-group-item list-group-item-action d-flex justify-content-between active">Belgrade
+                    <i class="fa fa-caret-right" aria-hidden="true"></i>
+                </button>
+                <button type="button"
+                    class="btn-light list-group-item list-group-item-action d-flex justify-content-between ">Kragujevac
+                    <i class="fa fa-caret-right" aria-hidden="true"></i>
+                </button>
+                <button type="button"
+                    class="btn-light list-group-item list-group-item-action d-flex justify-content-between ">Kraljevo
+                    <i class="fa fa-caret-right" aria-hidden="true"></i>
+                </button>
+                <button type="button"
+                    class="btn-light list-group-item list-group-item-action d-flex justify-content-between ">Novi sad
+                    <i class="fa fa-caret-right" aria-hidden="true"></i>
+                </button>
+                <button type="button"
+                    class="btn-light list-group-item list-group-item-action d-flex justify-content-between ">Nis
+                    <i class="fa fa-caret-right" aria-hidden="true"></i>
+                </button>
+                <button type="button"
+                    class="btn-light list-group-item list-group-item-action d-flex justify-content-between ">Pristina
+                    <i class="fa fa-caret-right" aria-hidden="true"></i>
+                </button>
+                <button type="button"
+                    class="btn-light list-group-item list-group-item-action d-flex justify-content-between ">Subotica
+                    <i class="fa fa-caret-right" aria-hidden="true"></i>
+                </button>
+
+            </ul>
+        </div>
+
+        <div class="col-1"></div>
+
+        <!-- Theatre List -->
+        <div class="col-sm-12 col-md-7">
+            <h2 class="d-none d-md-block" id="currentCategory">Belgrade</h2>
+            <div class="d-none d-md-block overflow-auto  window-full" id="theatreList">
+
+            </div>
+            <div class="d-block d-md-none overflow-auto  window-full" id="theatreListMobile">
+
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            // Resize za scroll item-a
+            var elements = document.getElementsByClassName('window-full');
+            console.log();
+
+
+            fullheight(elements);
+
+            function fullheight(elements) {
+                let navbar = document.getElementById('divnav');
+                let windowheight = (window.innerHeight - navbar.getBoundingClientRect().height - 70) + "px";
+                for (let el in elements) {
+                    if (elements.hasOwnProperty(el)) {
+                        elements[el].style.height = windowheight;
+                    }
+                }
+            }
+
+            window.onresize = function (event) {
+                fullheight(elements);
+            }
+
+            //Side selection
+            $('.list-group button').click(function (e) {
+                e.preventDefault()
+
+                $that = $(this);
+
+                $that.parent().find('button').removeClass('active');
+                $that.addClass('active');
+
+                changeCity($that);
+
+            });
+
+            $('#categorySpinner').change(function (e) {
+                e.preventDefault()
+
+                $that = $(this).find(":selected");
+                
+                changeCity($that);
+
+            });
+
+
+            function changeCity(city){
+                var currCity = $("#currentCategory");
+                currCity.text(city.text());
+
+                
+                
+                switch (currCity.text().trim()) {
+                    case "Belgrade":
+                        removeLocations();
+                        addLocationList(locationList[0]);
+                        break;
+                    case "Kragujevac":
+                        removeLocations();
+                        addLocationList(locationList[1]);
+                        break;
+                    case "Kraljevo":
+                        removeLocations();
+                        addLocationList(locationList[2]);
+                        break;
+                    case "Nis":
+                        removeLocations();
+                        addLocationList(locationList[4]);
+                        break;
+                    case "Novi sad":
+                        removeLocations();
+                        addLocationList(locationList[3]);
+                        break;
+                    case "Pristina":
+                        removeLocations();
+                        addLocationList(locationList[5]);
+                        break;
+                    case "Subotica":
+                        removeLocations();
+                        addLocationList(locationList[6]);
+                        break;
+                    
+                    default:
+                    removeLocations();
+                        addLocationList(locationList[0]);
+                }
+            }
+
+            function initLocations() {
+
+                var locationListBelgrade = [];
+                var locationListKragujevac = [];
+                var locationListKraljevo = [];
+                var locationListNoviSad = [];
+                var locationListNis = [];
+                var locationListPristina = [];
+                var locationListSubotica = [];
+
+                var locationList = [];
+
+                locationList.push(locationListBelgrade);
+                locationList.push(locationListKragujevac);
+                locationList.push(locationListKraljevo);
+                locationList.push(locationListNoviSad);
+                locationList.push(locationListNis);
+                locationList.push(locationListPristina);
+                locationList.push(locationListSubotica);
+
+                var l1 = {
+                    title: "New Belgrade Theatre",
+                    loc: "https://maps.google.com/maps?q=usce&t=&z=13&ie=UTF8&iwloc=&output=embed",
+                    open: "09:00h - 23:30h",
+                    phone: "(123)-123-123",
+                    email: "nbgd@moviethtr.com",
+                };
+                var l2 = {
+                    title: "Zemun Theatre",
+                    loc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2828.387117579734!2d20.386457515557726!3d44.85441338194443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a642aa08d647f%3A0xa07d6cdb2418f56!2z0KbQsNGA0LAg0JTRg9GI0LDQvdCwLCDQkdC10L7Qs9GA0LDQtA!5e0!3m2!1ssr!2srs!4v1559059682651!5m2!1ssr!2srs",
+                    open: "09:00h - 23:30h",
+                    phone: "(123)-123-123",
+                    email: "zmn@moviethtr.com",
+                };
+
+                var l3 = {
+                    title: "Trg Republike Theatre",
+                    loc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.3048404468827!2d20.45785431555661!3d44.815353984522794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a77479307c69d%3A0xbcbf639fe900b77b!2sRa%C4%8Dunarski+fakultet!5e0!3m2!1ssr!2srs!4v1559059567287!5m2!1ssr!2srs",
+                    open: "09:00h - 23:30h",
+                    phone: "(123)-123-123",
+                    email: "trg@moviethtr.com",
+                };
+
+                locationListBelgrade.push(l1);
+                locationListBelgrade.push(l2);
+                locationListBelgrade.push(l3);
+
+                var l4 = {
+                    title: "Kragujevac Theatre",
+                    loc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.3048404468827!2d20.45785431555661!3d44.815353984522794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a77479307c69d%3A0xbcbf639fe900b77b!2sRa%C4%8Dunarski+fakultet!5e0!3m2!1ssr!2srs!4v1559059567287!5m2!1ssr!2srs",
+                    open: "09:00h - 23:30h",
+                    phone: "(123)-123-123",
+                    email: "krg@moviethtr.com",
+                };
+                var l5 = {
+                    title: "Kragujevac Theatre 2",
+                    loc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.3048404468827!2d20.45785431555661!3d44.815353984522794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a77479307c69d%3A0xbcbf639fe900b77b!2sRa%C4%8Dunarski+fakultet!5e0!3m2!1ssr!2srs!4v1559059567287!5m2!1ssr!2srs",
+                    open: "09:00h - 23:30h",
+                    phone: "(123)-123-123",
+                    email: "krg@moviethtr.com",
+                };
+                locationListKragujevac.push(l4);
+                locationListKragujevac.push(l5);
+                var l6 = {
+                    title: "Kraljevo Theatre",
+                    loc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.3048404468827!2d20.45785431555661!3d44.815353984522794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a77479307c69d%3A0xbcbf639fe900b77b!2sRa%C4%8Dunarski+fakultet!5e0!3m2!1ssr!2srs!4v1559059567287!5m2!1ssr!2srs",
+                    open: "09:00h - 23:30h",
+                    phone: "(123)-123-123",
+                    email: "krlj@moviethtr.com",
+                };
+                var l7 = {
+                    title: "Kraljevo Theatre 2",
+                    loc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.3048404468827!2d20.45785431555661!3d44.815353984522794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a77479307c69d%3A0xbcbf639fe900b77b!2sRa%C4%8Dunarski+fakultet!5e0!3m2!1ssr!2srs!4v1559059567287!5m2!1ssr!2srs",
+                    open: "09:00h - 23:30h",
+                    phone: "(123)-123-123",
+                    email: "krlj@moviethtr.com",
+                };
+                locationListKraljevo.push(l6);
+                locationListKraljevo.push(l7);
+                var l8 = {
+                    title: "Novi Sad Theatre",
+                    loc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.3048404468827!2d20.45785431555661!3d44.815353984522794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a77479307c69d%3A0xbcbf639fe900b77b!2sRa%C4%8Dunarski+fakultet!5e0!3m2!1ssr!2srs!4v1559059567287!5m2!1ssr!2srs",
+                    open: "09:00h - 23:30h",
+                    phone: "(123)-123-123",
+                    email: "ns@moviethtr.com",
+                };
+                var l9 = {
+                    title: "Novi Sad Theatre 2",
+                    loc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.3048404468827!2d20.45785431555661!3d44.815353984522794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a77479307c69d%3A0xbcbf639fe900b77b!2sRa%C4%8Dunarski+fakultet!5e0!3m2!1ssr!2srs!4v1559059567287!5m2!1ssr!2srs",
+                    open: "09:00h - 23:30h",
+                    phone: "(123)-123-123",
+                    email: "ns2@moviethtr.com",
+                };
+                locationListNoviSad.push(l8);
+                locationListNoviSad.push(l9);
+                var l10 = {
+                    title: "Nis Theatre",
+                    loc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.3048404468827!2d20.45785431555661!3d44.815353984522794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a77479307c69d%3A0xbcbf639fe900b77b!2sRa%C4%8Dunarski+fakultet!5e0!3m2!1ssr!2srs!4v1559059567287!5m2!1ssr!2srs",
+                    open: "09:00h - 23:30h",
+                    phone: "(123)-123-123",
+                    email: "nis@moviethtr.com",
+                };
+                var l11 = {
+                    title: "Nis Theatre 2",
+                    loc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.3048404468827!2d20.45785431555661!3d44.815353984522794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a77479307c69d%3A0xbcbf639fe900b77b!2sRa%C4%8Dunarski+fakultet!5e0!3m2!1ssr!2srs!4v1559059567287!5m2!1ssr!2srs",
+                    open: "09:00h - 23:30h",
+                    phone: "(123)-123-123",
+                    email: "nis2@moviethtr.com",
+                };
+                locationListNis.push(l10);
+                locationListNis.push(l11);
+                var l12 = {
+                    title: "Pristina Theatre",
+                    loc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.3048404468827!2d20.45785431555661!3d44.815353984522794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a77479307c69d%3A0xbcbf639fe900b77b!2sRa%C4%8Dunarski+fakultet!5e0!3m2!1ssr!2srs!4v1559059567287!5m2!1ssr!2srs",
+                    open: "09:00h - 23:30h",
+                    phone: "(123)-123-123",
+                    email: "kosovo@moviethtr.com",
+                };
+                var l13 = {
+                    title: "Pristina Theatre 2",
+                    loc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.3048404468827!2d20.45785431555661!3d44.815353984522794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a77479307c69d%3A0xbcbf639fe900b77b!2sRa%C4%8Dunarski+fakultet!5e0!3m2!1ssr!2srs!4v1559059567287!5m2!1ssr!2srs",
+                    open: "09:00h - 23:30h",
+                    phone: "(123)-123-123",
+                    email: "kosovo2@moviethtr.com",
+                };
+                locationListPristina.push(l12);
+                locationListPristina.push(l13);
+                var l14 = {
+                    title: "Subotica Theatre",
+                    loc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.3048404468827!2d20.45785431555661!3d44.815353984522794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a77479307c69d%3A0xbcbf639fe900b77b!2sRa%C4%8Dunarski+fakultet!5e0!3m2!1ssr!2srs!4v1559059567287!5m2!1ssr!2srs",
+                    open: "09:00h - 23:30h",
+                    phone: "(123)-123-123",
+                    email: "sub@moviethtr.com",
+                };
+                var l15 = {
+                    title: "Subotica Theatre 2",
+                    loc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.3048404468827!2d20.45785431555661!3d44.815353984522794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a77479307c69d%3A0xbcbf639fe900b77b!2sRa%C4%8Dunarski+fakultet!5e0!3m2!1ssr!2srs!4v1559059567287!5m2!1ssr!2srs",
+                    open: "09:00h - 23:30h",
+                    phone: "(123)-123-123",
+                    email: "sub2@moviethtr.com",
+                };
+                locationListSubotica.push(l14);
+                locationListSubotica.push(l15);
+
+                return locationList;
+            }
+
+            var locationList = initLocations();
+
+            jQuery(function ($) {
+
+                addLocationList(locationList[0]);
+
+            });
+
+
+            function addLocationList(locationList) {
+
+                locationList = randomizeLocations(locationList);
+
+                locationList.forEach(element => {
+                    addLocation(element);
+                });
+            }
+
+
+            function addLocation(location) {
+                var test = $("#theatreList");
+                var testMobile = $("#theatreListMobile");
+
+                test.append(`<div class="mx-0 px-1 my-4" id="theatre">
+                    <div class="card">
+                        <div class="row pt-0">
+                            <div class="col-7">
+                                <iframe
+                                src=` + location.loc + `
+                                    width="100%" height="320" frameborder="0" style="border:0" allowfullscreen>
+                                </iframe>
+                            </div>
+                            <div class="col-5 my-auto" id="cardDescription">
+                                <h4 class="mb-4 mt-0">` + location.title + `</h4>
+                                <p class="my-1">Open: ` + location.open + `</p>
+                                <p class="my-1">Phone: ` + location.phone + `</p>
+                                <p class="my-1">Email: ` + location.email + `</p>
+                                <div class="row justify-content-center" >
+                                    <img class="col-3 mx-2 my-2 img-thumbnail" style="height: 100%;" src="images/4k.png" alt="">
+                                    <img class="col-3 mx-2 my-2 img-thumbnail" style="height: 100%;" src="images/3d.png" alt="">
+                                    <img class="col-3 mx-2 my-2 img-thumbnail" style="height: 100%;" src="images/imax.png" alt="">
+                                </div>
+                                <a class="btn btn-danger mt-3" href="allMovies.html">See showings</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>`);
+
+                testMobile.append(`<div class="mx-0 px-1 my-4" id="theatre">
+                    <div class="card">
+                        <div class="pt-0">
+                            <div class="">
+                                <iframe
+                                src=` + location.loc + `
+                                    width="100%" height="320" frameborder="0" style="border:0" allowfullscreen>
+                                </iframe>
+                            </div>
+                            <div class="my-auto" id="cardDescription">
+                                <h4 class="mb-4 mt-1">` + location.title + `</h4>
+                                <p class="my-1">Open: ` + location.open + `</p>
+                                <p class="my-1">Phone: <i class="text-primary">` + location.phone + `</i></p>
+                                <p class="my-1">Email:<i class="text-primary"> ` + location.email + `</i></p>
+                                
+                                <a class="btn btn-danger mt-3" href="allMovies.html">See showings</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>`);
+
+
+            };
+
+
+
+            function removeLocations() {
+                var test = $("#theatreList");
+                test.html("");
+
+                var testMobile = $("#theatreListMobile");
+                testMobile.html("");
+            };
+
+            function randomizeLocations(a) {
+                for (let i = a.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [a[i], a[j]] = [a[j], a[i]];
+                }
+                return a;
+            }
+
+
+        });
+    </script>
 </body>
 
 </html>
