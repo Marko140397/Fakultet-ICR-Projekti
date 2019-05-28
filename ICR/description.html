@@ -1,6 +1,8 @@
 <html lang="en">
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <meta charset="UTF-8">
     <!-- CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -18,6 +20,7 @@
 </head>
 
 <body>
+    <!-- TODO selector -->
     <nav class='navbar sticky-top navbar-expand-md navbar-light bg-white row shadow' id="divnav">
 
         <!--   Menu toggle    -->
@@ -28,7 +31,7 @@
         <!-- Location indicator mobile -->
         <div class="d-block d-md-none">
             <a class="navbar-brand mb-0 h1" href="#" id="locind">
-                Home
+                Movie
             </a>
         </div>
 
@@ -52,7 +55,7 @@
         <!-- Empty div to center logo in mobile -->
         <div class="d-block d-md-none">
             <a class="navbar-brand mb-0 text-white d-block d-md-none" id="locindempty">
-                Home
+                Movie
             </a>
         </div>
 
@@ -122,6 +125,185 @@
 
     </nav>
 
+    <!-- Page body -->
+    <div class="container-fluid row text-center my-4 mx-0 pr-0 justify-content-between" id="pageBody">
+
+        <!-- Left column -->
+        <div class="d-none d-md-block col-3 px-4 py-4">
+            <div class="mx-2">
+                <div class="card">
+                    <a href="#" data-toggle="modal" data-target=".bd-example-modal-lg">
+                        <img class="card-img-bottom rounded img-flow" src="images/JohnWickPoster.jpeg"
+                            alt="Card image cap"></a>
+                    <div class="card-body ">
+                        <div>
+                            <a class="btn-lg btn-danger my-3  font-weight-bold" href="buyTickets.html">Buy Tickets
+                            </a>
+                        </div>
+                        <div>
+                            <a class="btn btn-outline-dark my-3  font-weight-bold" data-toggle="modal"
+                                data-target=".bd-example-modal-lg">Watch Trailer
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Center column -->
+        <div class="text-left col-5 d-none d-md-block ">
+            <h1 style="font-size: 3.2vw;" class="mb-5 mt-4">John Wick 3</h1>
+            <p class="my-5" style="font-size: 1.5vw;">In this third installment of the adrenaline-fueled action
+                franchise,
+                super-assassin John Wick (Reeves) returns with a $14 million price tag on his head and an army of
+                bounty-hunting killers on his trail.
+                After killing a member of the shadowy international assassin's guild, the High Table,
+                John Wick is excommunicado, but the world's most ruthless hit men and women await his every turn.
+            </p>
+            <div class="row">
+                <div class="col-6">
+                    <p style="font-size: 1.2vw;"> <b> Released:</b> 25.05</p>
+                    <p style="font-size: 1.2vw;"><b>Lenght:</b> 2h 11m </p>
+                    <p style="font-size: 1.2vw;"><b>Rating:</b> R</p>
+                    <p style="font-size: 1.2vw;"><b>Critic Score:</b> 9/10</p>
+                </div>
+                <div class="col-6 justify-content-left text-left d-flex flex-wrap align-items-center">
+                    <a href="https://www.rottentomatoes.com/m/john_wick_chapter_3_parabellum">
+                        <img class="img-thumbnail " style="width: 30%" src="images/RT.png" alt="">
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Right Column -->
+        <div class="d-none d-md-block col-3 mt-4">
+            <h3 class="" style="font-size: 2vw">Showings near you</h3>
+
+            <div class="jumbotron bg-white shadow py-1 px-1 pb-5" id="specialOffers">
+
+                <!-- SpecOff List Desktop -->
+                <div class="" id="specialOfferList">
+
+                    <div class="mx-0 px-1 mb-5 mt-4" id="movieItem">
+                        <div class="card">
+                            <div class="row pt-0">
+                                <a class="col-5" href="seats.html">
+                                    <img class="card-img-top img-thumbnail rounded" src="images/15.jpg"
+                                        alt="Card image cap">
+                                </a>
+                                <div class="col-7 ">
+                                    <div class="row">
+                                        <div class="text-left">
+                                            <h6 style="font-size: 1vw" class="my-1 mt-1 font-weight-bold">New Belgrade
+                                            </h6>
+                                            <p style="font-size: 1vw" class="my-0 ">40 seats left</p>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div>
+                                            <a class="btn btn-danger" href="seats.html">Buy Tickets</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mx-0 px-1 my-5"" id=" movieItem">
+                        <div class="card">
+                            <div class="row pt-0">
+                                <a class="col-5" href="seats.html">
+                                    <img class="card-img-top img-thumbnail rounded" src="images/17.jpg"
+                                        alt="Card image cap">
+                                </a>
+                                <div class="col-7 ">
+                                    <div class="row">
+                                        <div class="text-left">
+                                            <h6 style="font-size: 1vw" class="my-1 mt-1 font-weight-bold">Trg Republike
+                                            </h6>
+                                            <p style="font-size: 1vw" class="my-0 text-danger">10 seats left</p>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div>
+                                            <a class="btn btn-danger" href="seats.html">Buy Tickets</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mx-0 px-1 my-5x"" id=" movieItem">
+                        <div class="card">
+                            <div class="row pt-0">
+                                <a class="col-5" href="seats.html">
+                                    <img class="card-img-top img-thumbnail rounded" src="images/20.jpg"
+                                        alt="Card image cap">
+                                </a>
+                                <div class="col-7 ">
+                                    <div class="row">
+                                        <div class="text-left">
+                                            <h6 style="font-size: 1vw" class="my-1 mt-1 font-weight-bold">Trg Republike
+                                            </h6>
+                                            <p style="font-size: 1vw" class="my-0 ">25 seats left</p>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div>
+                                            <a class="btn btn-danger" href="seats.html">Buy Tickets</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Trailer window -->
+        <div class="modal fade bd-example-modal-lg" backdrop="true" tabindex="-1" role="dialog"
+            aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">John Wick 3 Trailer</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/pU8-7BX9uxs"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe> </div>
+                    </div>
+                    
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <script>
+
+    </script>
 </body>
 
 </html>
