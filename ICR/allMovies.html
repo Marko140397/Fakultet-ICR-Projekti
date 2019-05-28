@@ -1,6 +1,8 @@
 <html lang="en">
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <meta charset="UTF-8">
     <!-- CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -18,7 +20,7 @@
 </head>
 
 <body>
-    <nav class='navbar sticky-top navbar-expand-md navbar-light bg-white row' id="divnav">
+    <nav class='navbar sticky-top navbar-expand-md navbar-light bg-white row shadow' id="divnav">
 
         <!--   Menu toggle    -->
         <button class="navbar-toggler ml-4" data-toggle="collapse" data-target="#divinnav">
@@ -28,7 +30,7 @@
         <!-- Location indicator mobile -->
         <div class="d-block d-md-none">
             <a class="navbar-brand mb-0 h1" href="#" id="locind">
-                Home
+                Movies
             </a>
         </div>
 
@@ -52,7 +54,7 @@
         <!-- Empty div to center logo in mobile -->
         <div class="d-block d-md-none">
             <a class="navbar-brand mb-0 text-white d-block d-md-none" id="locindempty">
-                Home
+                Movies
             </a>
         </div>
 
@@ -122,6 +124,429 @@
 
     </nav>
 
+    <!-- Page body -->
+    <div class="container-fluid row text-center my-4 mx-0 pr-0" id="pageBody">
+
+        <!-- Side category selection -->
+        <div class="d-none d-md-block col-md-3" id="CategoryList">
+            <h3>Categories</h3>
+            <ul class="list-group">
+                <button type="button" style=""
+                    class="btn-light list-group-item list-group-item-action d-flex justify-content-between active">All
+                    Movies
+                    <i class="fa fa-caret-right" aria-hidden="true"></i>
+                </button>
+                <button type="button"
+                    class="btn-light list-group-item list-group-item-action d-flex justify-content-between">Action
+                    <i class="fa fa-caret-right" aria-hidden="true"></i>
+                </button>
+                <button type="button"
+                    class="btn-light list-group-item list-group-item-action d-flex justify-content-between">Biography
+                    <i class="fa fa-caret-right" aria-hidden="true"></i>
+                </button>
+                <button type="button"
+                    class="btn-light list-group-item list-group-item-action d-flex justify-content-between">Crime
+                    <i class="fa fa-caret-right" aria-hidden="true"></i>
+                </button>
+                <button type="button"
+                    class="btn-light list-group-item list-group-item-action d-flex justify-content-between">Comedy
+                    <i class="fa fa-caret-right" aria-hidden="true"></i>
+                </button>
+                <button type="button"
+                    class="btn-light list-group-item list-group-item-action d-flex justify-content-between">Drama
+                    <i class="fa fa-caret-right" aria-hidden="true"></i>
+                </button>
+                <button type="button"
+                    class="btn-light list-group-item list-group-item-action d-flex justify-content-between">Fantasy
+                    <i class="fa fa-caret-right" aria-hidden="true"></i>
+                </button>
+                <button type="button"
+                    class="btn-light list-group-item list-group-item-action d-flex justify-content-between">History
+                    <i class="fa fa-caret-right" aria-hidden="true"></i>
+                </button>
+                <button type="button"
+                    class="btn-light list-group-item list-group-item-action d-flex justify-content-between">Horror
+                    <i class="fa fa-caret-right" aria-hidden="true"></i>
+                </button>
+                <button type="button"
+                    class="btn-light list-group-item list-group-item-action d-flex justify-content-between">Romance
+                    <i class="fa fa-caret-right" aria-hidden="true"></i>
+                </button>
+                <button type="button"
+                    class="btn-light list-group-item list-group-item-action d-flex justify-content-between">Sci - Fi
+                    <i class="fa fa-caret-right" aria-hidden="true"></i>
+                </button>
+                <button type="button"
+                    class="btn-light list-group-item list-group-item-action d-flex justify-content-between">SuperHero
+                    <i class="fa fa-caret-right" aria-hidden="true"></i>
+                </button>
+            </ul>
+        </div>
+
+        <!-- Category Mobile -->
+        <div class=" d-block d-md-none col-12 form-group py-1">
+            <select class="form-control-lg bg-light btn-block" name="" id="categorySpinner">
+                <option>All Movies</option>
+                <option>Action</option>
+                <option>Biography</option>
+                <option>Crime</option>
+                <option>Comedy</option>
+                <option>Drama</option>
+                <option>Fantasy</option>
+                <option>History</option>
+                <option>Horror</option>
+                <option>Romance</option>
+                <option>Sci-Fi</option>
+                <option>SuperHero</option>
+            </select>
+        </div>
+
+        <!-- Movie List -->
+        <div class="col-sm-12 col-md-5">
+            <h3 class="d-none d-md-block" id="currentCategory">All Movies</h3>
+            <div class="overflow-auto  window-full" id="movieList">
+
+                <!-- Special Offers Mobile -->
+                <div class="col-12 d-block d-md-none mx-0 px-1">
+
+                    <div class="jumbotron bg-white shadow py-1" id="specialOffers">
+
+                        <div class="row">
+                            <h4 class="col-6 pb-1" id=""> Special Offers</h4>
+                            <h5 class="col-6 text-danger pb-2 time"> 05:00 Remaining </h5>
+                        </div>
+                        <!-- SpecOff List Desktop -->
+                        <div class="" id="specialOfferList">
+
+                            <div class="mx-0 px-1" id="movieItem">
+                                <div class="card">
+                                    <div class="row pt-0">
+                                        <a class="col-3" href="description.html">
+                                            <img class="card-img-top rounded" src="images/JohnWickPoster.jpeg"
+                                                alt="Card image cap">
+                                        </a>
+                                        <div class="col-9">
+                                            <div class="text-left">
+                                                <h6 class="my-1 mt-1">John Wick 3: 2 Tickets</h6>
+                                                <p class="my-0 font-weight-bold">11.20$</p>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-4 text-left">
+                                                    <p class="my-1 mr-1 ml-0 text-success">20% Discount</p>
+                                                </div>
+                                                <div class="col-8 text-center">
+                                                    <a class="btn btn-danger my-1 ml-0 mr-1" href="buyTickets.html">Buy
+                                                        Tickets</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mx-0 px-1 my-3" id="movieItem">
+                                <div class="card">
+                                    <div class="row pt-0">
+                                        <a class="col-3" href="description.html">
+                                            <img class="card-img-top rounded" src="images/StarWarsPosterR.jpeg"
+                                                alt="Card image cap">
+                                        </a>
+                                        <div class="col-9">
+                                            <div class="text-left">
+                                                <h6 class="my-1 mt-1">Star Wars: 3 Tickets</h6>
+                                                <p class="my-0 font-weight-bold">15.75$</p>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-4 text-left">
+                                                    <p class="my-1 mr-1 ml-0 text-success">25% Discount</p>
+                                                </div>
+                                                <div class="col-8 text-center">
+                                                    <a class="btn btn-danger my-1 ml-0 mr-1" href="buyTickets.html">Buy
+                                                        Tickets</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mx-0 px-1" id="movieItem">
+                    <div class="card">
+                        <div class="row pt-0">
+                            <a class="col-3" href="description.html">
+                                <img class="card-img-top rounded" src="images/JohnWickPoster.jpeg" alt="Card image cap">
+                            </a>
+                            <div class="col-4 my-auto" id="cardDescription">
+                                <h5 class="mb-4 mt-0">John Wick 3</h5>
+                                <p class="my-1">Lenght: 2h 11m</p>
+                                <p class="my-1">Rating: R</p>
+                                <p class="my-1">Released: 25.05</p>
+                            </div>
+                            <div class="col-4 text-center justify-content-center align-middle my-auto" id="cardButtons">
+                                <a class="btn btn-block btn-danger my-1" href="buyTickets.html">Buy Tickets</a>
+                                <a class="btn btn-outline-dark my-1" href="description.html">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mx-0 px-1 my-3" id="movieItem">
+                    <div class="card">
+                        <div class="row pt-0">
+                            <a class="col-3" href="description.html">
+                                <img class="card-img-top rounded" src="images/BooksmartPoster.jpg" alt="Card image cap">
+                            </a>
+                            <div class="col-4 my-auto" id="cardDescription">
+                                <h5 class="mb-4 mt-0">Booksmart</h5>
+                                <p class="my-1">Lenght: 1h 45m</p>
+                                <p class="my-1">Rating: PG-13</p>
+                                <p class="my-1">Released: 25.05</p>
+                            </div>
+                            <div class="col-4 text-center justify-content-center align-middle my-auto" id="cardButtons">
+                                <a class="btn btn-block btn-danger my-1" href="buyTickets.html">Buy Tickets</a>
+                                <a class="btn btn-outline-dark my-1" href="description.html">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mx-0 px-1 my-3" id="movieItem">
+                    <div class="card">
+                        <div class="row pt-0">
+                            <a class="col-3" href="description.html">
+                                <img class="card-img-top rounded" src="images/CaptainMarvelPoster.jpeg"
+                                    alt="Card image cap">
+                            </a>
+                            <div class="col-4 my-auto" id="cardDescription">
+                                <h5 class="mb-4 mt-0">Captain Marvel</h5>
+                                <p class="my-1">Lenght: 2h 05m</p>
+                                <p class="my-1">Rating: PG-13</p>
+                                <p class="my-1">Released: 25.05</p>
+                            </div>
+                            <div class="col-4 text-center justify-content-center align-middle my-auto" id="cardButtons">
+                                <a class="btn btn-block btn-danger my-1" href="buyTickets.html">Buy Tickets</a>
+                                <a class="btn btn-outline-dark my-1" href="description.html">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mx-0 px-1 my-3" id="movieItem">
+                    <div class="card">
+                        <div class="row pt-0">
+                            <a class="col-3" href="description.html">
+                                <img class="card-img-top rounded" src="images/DogsJourneyPoster.jpg"
+                                    alt="Card image cap">
+                            </a>
+                            <div class="col-4 my-auto" id="cardDescription">
+                                <h5 class="mb-4 mt-0">Dog Journey</h5>
+                                <p class="my-1">Lenght: 1h 30m</p>
+                                <p class="my-1">Rating: G</p>
+                                <p class="my-1">Released: 25.05</p>
+                            </div>
+                            <div class="col-4 text-center justify-content-center align-middle my-auto" id="cardButtons">
+                                <a class="btn btn-block btn-danger my-1" href="buyTickets.html">Buy Tickets</a>
+                                <a class="btn btn-outline-dark my-1" href="description.html">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mx-0 px-1 my-3" id="movieItem">
+                    <div class="card">
+                        <div class="row pt-0">
+                            <a class="col-3" href="description.html">
+                                <img class="card-img-top rounded" src="images/StarWarsPosterR.jpeg"
+                                    alt="Card image cap">
+                            </a>
+                            <div class="col-4 my-auto" id="cardDescription">
+                                <h5 class="mb-4 mt-0">Star Wars</h5>
+                                <p class="my-1">Lenght: 2h 05m</p>
+                                <p class="my-1">Rating: PG-13</p>
+                                <p class="my-1">Released: 25.05</p>
+                            </div>
+                            <div class="col-4 text-center justify-content-center align-middle my-auto" id="cardButtons">
+                                <a class="btn btn-block btn-danger my-1" href="buyTickets.html">Buy Tickets</a>
+                                <a class="btn btn-outline-dark my-1" href="description.html">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mx-0 px-1 my-3" id="movieItem">
+                    <div class="card">
+                        <div class="row pt-0">
+                            <a class="col-3" href="description.html">
+                                <img class="card-img-top rounded" src="images/HotelMumbaiPoster.jpeg"
+                                    alt="Card image cap">
+                            </a>
+                            <div class="col-4 my-auto" id="cardDescription">
+                                <h5 class="mb-4 mt-0">Hotel Mumbai</h5>
+                                <p class="my-1">Lenght: 2h</p>
+                                <p class="my-1">Rating: R</p>
+                                <p class="my-1">Released: 25.05</p>
+                            </div>
+                            <div class="col-4 text-center justify-content-center align-middle my-auto" id="cardButtons">
+                                <a class="btn btn-block btn-danger my-1" href="buyTickets.html">Buy Tickets</a>
+                                <a class="btn btn-outline-dark my-1" href="description.html">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mx-0 px-1 my-3" id="movieItem">
+                    <div class="card">
+                        <div class="row pt-0">
+                            <a class="col-3" href="description.html">
+                                <img class="card-img-top rounded" src="images/UsPoster.jpeg" alt="Card image cap">
+                            </a>
+                            <div class="col-4 my-auto" id="cardDescription">
+                                <h5 class="mb-4 mt-0">Us</h5>
+                                <p class="my-1">Lenght: 1h 40m</p>
+                                <p class="my-1">Rating: R</p>
+                                <p class="my-1">Released: 25.05</p>
+                            </div>
+                            <div class="col-4 text-center justify-content-center align-middle my-auto" id="cardButtons">
+                                <a class="btn btn-block btn-danger my-1" href="buyTickets.html">Buy Tickets</a>
+                                <a class="btn btn-outline-dark my-1" href="description.html">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+
+        <!-- Special Offers Desktop-->
+        <div class="col-md-4 d-none d-md-block">
+            <h3 class="">Special offers</h3>
+
+            <div class="jumbotron bg-white shadow py-4" id="specialOffers">
+
+                <h4 class="text-danger pb-2 time" id=""> 05:00 Remaining </h4>
+
+                <!-- SpecOff List Desktop -->
+                <div class="" id="specialOfferList">
+
+                    <div class="mx-0 px-1" id="movieItem">
+                        <div class="card">
+                            <div class="row pt-0">
+                                <a class="col-3" href="description.html">
+                                    <img class="card-img-top rounded" src="images/JohnWickPoster.jpeg"
+                                        alt="Card image cap">
+                                </a>
+                                <div class="col-9">
+                                    <div class="text-left">
+                                        <h6 class="my-1 mt-1">John Wick 3: 2 Tickets</h6>
+                                        <p class="my-0 font-weight-bold">11.20$</p>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-left">
+                                            <p class="my-1 mr-1 ml-0 text-success">20% Discount</p>
+                                        </div>
+                                        <div class="col-8 text-center">
+                                            <a class="btn btn-danger my-1 ml-0 mr-1" href="buyTickets.html">Buy
+                                                Tickets</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mx-0 px-1 my-3" id="movieItem">
+                        <div class="card">
+                            <div class="row pt-0">
+                                <a class="col-3" href="description.html">
+                                    <img class="card-img-top rounded" src="images/StarWarsPosterR.jpeg"
+                                        alt="Card image cap">
+                                </a>
+                                <div class="col-9">
+                                    <div class="text-left">
+                                        <h6 class="my-1 mt-1">Star Wars: 3 Tickets</h6>
+                                        <p class="my-0 font-weight-bold">15.75$</p>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 text-left">
+                                            <p class="my-1 mr-1 ml-0 text-success">25% Discount</p>
+                                        </div>
+                                        <div class="col-8 text-center">
+                                            <a class="btn btn-danger my-1 ml-0 mr-1" href="buyTickets.html">Buy
+                                                Tickets</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            // Resize za scroll item-a
+            var elements = document.getElementsByClassName('window-full');
+            console.log();
+
+
+            fullheight(elements);
+
+            function fullheight(elements) {
+                let navbar = document.getElementById('divnav');
+                let windowheight = (window.innerHeight - navbar.getBoundingClientRect().height - 70) + "px";
+                for (let el in elements) {
+                    if (elements.hasOwnProperty(el)) {
+                        elements[el].style.height = windowheight;
+                    }
+                }
+            }
+
+            window.onresize = function (event) {
+                fullheight(elements);
+            }
+
+            //Side selection
+            $('.list-group button').click(function (e) {
+                e.preventDefault()
+
+                $that = $(this);
+
+                $that.parent().find('button').removeClass('active');
+                $that.addClass('active');
+            });
+
+            //CountDown
+            function startTimer(duration, display) {
+                var timer = duration,
+                    minutes, seconds;
+                setInterval(function () {
+                    minutes = parseInt(timer / 60, 10);
+                    seconds = parseInt(timer % 60, 10);
+
+                    minutes = minutes < 10 ? "0" + minutes : minutes;
+                    seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                    display.text(minutes + ":" + seconds + " Remaining");
+
+                    if (--timer < 0) {
+                        timer = 0;
+                    }
+                }, 1000);
+            }
+
+            jQuery(function ($) {
+                var fiveMinutes = 60 * 5,
+                    display = $('.time');
+                startTimer(fiveMinutes, display);
+            });
+
+        });
+    </script>
 </body>
 
 </html>
