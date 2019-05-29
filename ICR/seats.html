@@ -1,0 +1,602 @@
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta charset="UTF-8">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <!-- JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <title>Seats</title>
+</head>
+
+<body>
+
+    <nav class='navbar sticky-top navbar-expand-md navbar-light bg-white row shadow pr-0 mr-0' id="divnav">
+
+        <!--   Menu toggle    -->
+        <button class="navbar-toggler ml-4" data-toggle="collapse" data-target="#divinnav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Location indicator mobile -->
+        <div class="d-block d-md-none">
+            <a class="navbar-brand mb-0 h1" href="#" id="locind">
+                Seats
+            </a>
+        </div>
+
+        <!-- NavBrand Desktop  -->
+        <div class="col-3 d-none d-md-block pl-4" style="padding:5px">
+            <a class="navbar-brand" href="home.html" id="brandlogo">
+                <img class="rounded" src="images/Logo.png">
+            </a>
+            <a class="navbar-brand mb-0 h1 ml-3" href="home.html" id="brandlogo">
+                MovieThtr
+            </a>
+        </div>
+
+        <!-- NavBrand  Mobile -->
+        <div class="d-block d-md-none">
+            <a class="navbar-brand" href="home.html" id="brandlogo">
+                <img class="rounded" style="width:65px; height:40px" src="images/Logo.png">
+            </a>
+        </div>
+
+        <!-- Empty div to center logo in mobile -->
+        <div class="d-block d-md-none">
+            <a class="navbar-brand mb-0 text-white d-block d-md-none" id="locindempty">
+                Seats
+            </a>
+        </div>
+
+        <!-- Search Mobile -->
+        <div class="mr-4 d-block d-md-none" id="searchBtn">
+            <button class="btn btn-outline-dark" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+        </div>
+
+        <!-- Menu items -->
+        <div class='col-6 collapse navbar-collapse row px-0 ml-5' id='divinnav'>
+            <ul class="col-12 navbar-nav row px-0" id='navitemholder'>
+                <li class="nav-item col-2">
+                    <a class="nav-link text-dark" href="home.html" id="navbarDropdown" role="button"
+                        aria-haspopup="true" aria-expanded="false">
+                        Home
+                    </a>
+                </li>
+
+                <li class="col-3 nav-item dropdown px-2">
+                    <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Categories
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="allMovies.html">All Categories</a>
+                        <a class="dropdown-item" href="allMovies.html">Most Popular</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="allMovies.html">Action</a>
+                        <a class="dropdown-item" href="allMovies.html">Romantic</a>
+                        <a class="dropdown-item" href="allMovies.html">Superhero</a>
+                        <a class="dropdown-item" href="allMovies.html">Comedy</a>
+                        <a class="dropdown-item" href="allMovies.html">Drama</a>
+                    </div>
+                </li>
+                <li class="col-3 nav-item dropdown px-2">
+                    <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Locations
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="locations.html">Belgrade</a>
+                        <a class="dropdown-item" href="locations.html">Kragujevac</a>
+                        <a class="dropdown-item" href="locations.html">Kraljevo</a>
+                        <a class="dropdown-item" href="locations.html">Novi sad</a>
+                        <a class="dropdown-item" href="locations.html">Nis</a>
+                        <a class="dropdown-item" href="locations.html">Pristina</a>
+                        <a class="dropdown-item" href="locations.html">Subotica</a>
+                    </div>
+                </li>
+                <li class="col-3 nav-item px-2">
+                    <a class="nav-link text-dark" href="aboutUs.html" id="navbarDropdown" role="button"
+                        aria-haspopup="true" aria-expanded="false">
+                        About us
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Search Desktop -->
+        <div class="col-3 d-none d-md-block">
+            <form class="form-inline">
+                <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-danger ml-1" type="submit"><i class="fa fa-search"
+                        aria-hidden="true"></i></button>
+            </form>
+        </div>
+
+    </nav>
+
+
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb bg-light">
+            <li class="breadcrumb-item"><a href="description.html">John Wick</a></li>
+            <li class="breadcrumb-item"><a href="buyTickets.html">Showings</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Seats</li>
+        </ol>
+    </nav>
+
+
+
+    <!-- Page body -->
+    <div class="container-fluid my-4 mx-0 pr-0 " id="pageBody">
+
+        <!-- Heading -->
+        <div class="d-none d-mb-block text-center d-none d-md-block mb-4">
+            <h2 style="font-size: 2.5vw">Choose your seats</h2>
+        </div>
+
+        <div class="d-block d-md-none col-12">
+                <div class="jumbotron bg-white shadow mx-3 py-3">
+                    <div class="" id="headingJumbo">
+                        <h3>John Wick 3</h3>
+                    </div>
+                    <hr>
+                    <div class="" id="ticketsJumboM">
+                        
+                    </div>
+                    <hr>
+                    <div class="row" id="priceJumbo">
+                        <p value="0" class="col-7" id="totalM" style="font-size: 1.7vw">
+                            Total: 0$
+                        </p>
+                        <div class="col-5 ">
+                                <a class="btn btn-danger btn-lg" href="payment.html">Payment</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        <div class="row">
+            <div class="col-md-7 col-12 mx-5">
+                <div class="jumbotron bg-white px-5 py-5 shadow">
+                    <div class="container">
+                        <div class="mb-5" id="screen">
+                            <img class="img-fluid" src="images/screen.png" alt="">
+                        </div>
+
+                        <div class="row" id="seats">
+
+                            <div class="col-1 px-0 mx-0">
+                                <img id="A1" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="A2" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="A3" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="T" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seattakenpng" alt="">
+                                <img id="T" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seattakenpng" alt="">
+                                <img id="A6" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="A7" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="T" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seattakenpng" alt="">
+                                <img id="A9" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="AP" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatpremium.png" alt="">
+                            </div>
+                            <div class="col-1 px-0 mx-0">
+                                <img id="B1" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="B2" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="B3" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="T" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seattakenpng" alt="">
+                                <img id="T" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seattakenpng" alt="">
+                                <img id="B6" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="B7" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="B8" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="B9" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="BP" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatpremium.png" alt="">
+                            </div>
+
+
+                            <div class="col-1">
+                            </div>
+
+                            <div class="col-1 px-0 mx-0">
+                                <img id="C1" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="C2" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="C3" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="C4" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="C5" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="C6" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="C7" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="C8" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="C9" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="CP" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatpremium.png" alt="">
+                            </div>
+                            <div class="col-1 px-0 mx-0">
+                                <img id="D1" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="T" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seattakenpng" alt="">
+                                <img id="D3" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="D4" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="T" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seattakenpng" alt="">
+                                <img id="D6" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="D7" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="D8" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="D9" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="DP" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatpremium.png" alt="">
+                            </div>
+                            <div class="col-1 px-0 mx-0">
+                                <img id="E1" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="T" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seattakenpng" alt="">
+                                <img id="E3" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="E4" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="T" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seattakenpng" alt="">
+                                <img id="E6" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="E7" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="E8" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="E9" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="EP" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatpremium.png" alt="">
+                            </div>
+                            <div class="col-1 px-0 mx-0">
+                                <img id="F1" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="F2" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="F3" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="F4" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="T" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seattakenpng" alt="">
+                                <img id="F6" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="F7" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="F8" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="F9" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="FP" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatpremium.png" alt="">
+                            </div>
+                            <div class="col-1 px-0 mx-0">
+                                <img id="G1" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="G2" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="G3" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="G4" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="G5" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="G6" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="G7" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="G8" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="G9" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="GP" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatpremium.png" alt="">
+                            </div>
+                            <div class="col-1 px-0 mx-0">
+                                <img id="H1" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="H2" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="H3" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="H4" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="H5" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="H6" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="H7" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="H8" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="H9" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="HP" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatpremium.png" alt="">
+                            </div>
+
+
+                            <div class="col-1">
+
+                            </div>
+
+                            <div class="col-1 px-0 mx-0">
+                                <img id="I1" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="I2" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="T" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seattakenpng" alt="">
+                                <img id="T" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seattakenpng" alt="">
+                                <img id="I5" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="I6" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="I7" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="I8" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="I9" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="IP" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatpremium.png" alt="">
+                            </div>
+                            <div class="col-1 px-0 mx-0">
+                                <img id="J1" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="J2" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="T" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seattakenpng" alt="">
+                                <img id="J4" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="J5" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="J6" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="J7" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="J8" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="J9" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatfreecopy.png" alt="">
+                                <img id="JP" class="img-thumbnail" style="border: 0 none; box-shadow: none;"
+                                    src="images/seatpremium.png" alt="">
+                            </div>
+
+
+
+                        </div>
+                        <hr>
+
+                        <div class="row " id="legend">
+                            <div class="col-3 px-0  row">
+                                <div class="col-6">
+                                    <img class="img-fluid" src="images/seatfreecopy.png" alt="">
+                                </div>
+                                <div class="col-6 px-0 d-flex flex-wrap align-items-center ">
+                                    <p class="mb-0" style="font-size: 1vw"> - Empty</p>
+                                </div>
+                            </div>
+                            <div class="col-3 px-0  row">
+                                <div class="col-6">
+                                    <img class="img-fluid" src="images/seattakenpng" alt="">
+                                </div>
+                                <div class="col-6 px-0 d-flex flex-wrap align-items-center ">
+                                    <p class="mb-0" style="font-size: 1vw"> - Taken</p>
+                                </div>
+                            </div>
+                            <div class="col-3 px-0 mr-1 row">
+                                <div class="col-6">
+                                    <img class="img-fluid" src="images/seatselected.png" alt="">
+                                </div>
+                                <div class="col-6 px-0 d-flex flex-wrap align-items-center ">
+                                    <p class="mb-0" style="font-size: 1vw"> - Selected</p>
+                                </div>
+                            </div>
+                            <div class="col-3 px-0  row">
+                                <div class="col-6">
+                                    <img class="img-fluid" src="images/seatpremium.png" alt="">
+                                </div>
+                                <div class="col-6 px-0 d-flex flex-wrap align-items-center ">
+                                    <p class="mb-0" style="font-size: 1vw"> - Premium</p>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="d-none d-md-block col-4">
+                <div class="jumbotron bg-white shadow mx-3 py-3">
+                    <div class="" id="headingJumbo">
+                        <h3>John Wick 3</h3>
+                    </div>
+                    <hr>
+                    <div class="" id="ticketsJumbo">
+                        
+                    </div>
+                    <hr>
+                    <div class="row" id="priceJumbo">
+                        <p value="0" class="col-7" id="total" style="font-size: 1.7vw">
+                            Total: 0$
+                        </p>
+                        <div class="col-5 ">
+                                <a class="btn btn-danger btn-lg" href="payment.html">Payment</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        
+
+        
+
+
+
+
+
+
+    </div>
+
+
+    <script>
+        $(document).ready(function () {
+
+            
+            $(".img-thumbnail").click(function (e) {
+
+                var img = $(this);
+                var id = img.attr('id');
+
+                if (id === "T") {
+                    // IF Taken
+                } else if(id.indexOf("P")> -1){
+                    // IF Premium
+                    // IF - Select | ELSE - Deselect
+                    if (!(id.indexOf("S") > -1)) {
+                        img.attr('id', id + "S");
+                        img.attr('src', "images/seatselected.png");
+                        addSeat(id);
+                    } else {
+                        img.attr('id', id[0] + id[1]);
+                        img.attr('src', "images/seatpremium.png");
+                        removeSeat(id[0] + id[1]);
+                    }
+                }else{
+                    // Regular seat
+                    // IF - Select | ELSE - Deselect
+                    if (!(id.indexOf("S") > -1)) {
+                        img.attr('id', id + "S");
+                        img.attr('src', "images/seatselected.png");
+                        addSeat(id);
+                    } else {
+                        img.attr('id', id[0] + id[1]);
+                        img.attr('src', "images/seatfreecopy.png");
+                        removeSeat(id[0] + id[1]);
+                    }
+                }
+
+            });
+
+            function addSeat(id){
+                var div = $("#ticketsJumbo");
+                var divM = $("#ticketsJumboM");
+                var price = 0;
+                var total = $("#total");
+                var totalM = $("#totalM");
+
+                if(id.indexOf("P") > -1){
+                    price = 12;
+                }else{
+                    price = 7;
+                }
+
+
+                div.append(`
+                <p id="`+id+`" >Seat `+id+`:  `+price+`$ </p>
+                `);
+                divM.append(`
+                <p id="`+id+`" >Seat `+id+`:  `+price+`$ </p>
+                `);
+                
+                var totalPrice = parseInt(total.attr('value'));
+                totalPrice = totalPrice + price;
+                total.attr('value',totalPrice);
+                total.text("Total: "+totalPrice+"$");
+                totalM.text("Total: "+totalPrice+"$");
+
+            }
+
+            function removeSeat(id){
+                var div = $("#ticketsJumbo");
+                var divM = $("#ticketsJumboM");
+                var price = 0;
+                var total = $("#total");
+                var totalM = $("#totalM");
+
+                if(id.indexOf("P") > -1){
+                    price = 12;
+                }else{
+                    price = 7;
+                }
+
+
+                div.children().each(function(){
+                    if($(this).attr('id')===id){
+                        $(this).remove(); 
+                    }
+                });
+                divM.children().each(function(){
+                    if($(this).attr('id')===id){
+                        $(this).remove(); 
+                    }
+                });
+   
+                var totalPrice = parseInt(total.attr('value'));
+                totalPrice = totalPrice - price;
+                total.attr('value',totalPrice);
+                total.text("Total: "+totalPrice+"$");
+                totalM.text("Total: "+totalPrice+"$");
+            }
+
+
+
+        });
+    </script>
+</body>
+
+</html>
