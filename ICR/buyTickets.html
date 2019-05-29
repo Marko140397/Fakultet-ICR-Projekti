@@ -1,6 +1,8 @@
 <html lang="en">
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <meta charset="UTF-8">
     <!-- CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -14,11 +16,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
-    <title>Buy tickets</title>
+    <title>Buy Tickets</title>
 </head>
 
 <body>
-    <nav class='navbar sticky-top navbar-expand-md navbar-light bg-white row shadow' id="divnav">
+    <!-- TODO selector -->
+    <nav class='navbar sticky-top navbar-expand-md navbar-light bg-white row shadow pr-0 mr-0' id="divnav">
 
         <!--   Menu toggle    -->
         <button class="navbar-toggler ml-4" data-toggle="collapse" data-target="#divinnav">
@@ -28,7 +31,7 @@
         <!-- Location indicator mobile -->
         <div class="d-block d-md-none">
             <a class="navbar-brand mb-0 h1" href="#" id="locind">
-                Home
+                Movie
             </a>
         </div>
 
@@ -52,7 +55,7 @@
         <!-- Empty div to center logo in mobile -->
         <div class="d-block d-md-none">
             <a class="navbar-brand mb-0 text-white d-block d-md-none" id="locindempty">
-                Home
+                Movie
             </a>
         </div>
 
@@ -122,6 +125,1071 @@
 
     </nav>
 
+
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb bg-light">
+            <li class="breadcrumb-item"><a href="description.html">John Wick</a></li>
+
+            <li class="breadcrumb-item active" aria-current="page">Showings</li>
+        </ol>
+    </nav>
+
+
+
+    <!-- Page body -->
+    <div class="container-fluid my-4 mx-0 pr-0 " id="pageBody">
+
+        <!-- Heading and combo -->
+        <div class="text-center">
+            <h2 style="font-size: 2.5vw">John Wick 3 Showings</h2>
+        </div>
+
+
+        <!-- Selector -->
+        <div class="row justify-content-center my-4">
+            <div class="col-4 dropdown justify-content-center btn-group text-center">
+                <button class="btn btn-block btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    New Belgrade Theatre
+                </button>
+                <div class="col-11 dropdown-menu overflow-auto" style="height:500px" id="dropdown">
+                    <h6 class="dropdown-header font-weight-bold">Belgrade</h6>
+                    <a class="dropdown-item" href="#">New Belgrade Theatre</a>
+                    <a class="dropdown-item" href="#">Trg Republike Theatre</a>
+                    <a class="dropdown-item" href="#">Zemun Theatre</a>
+                    <div class="dropdown-divider"></div>
+
+                    <h6 class="dropdown-header font-weight-bold">Kragujevac</h6>
+                    <a class="dropdown-item" href="#">Kragujevac Theatre</a>
+                    <div class="dropdown-divider"></div>
+
+                    <h6 class="dropdown-header font-weight-bold">Kraljevo</h6>
+                    <a class="dropdown-item" href="#">Kraljevo Theatre</a>
+                    <div class="dropdown-divider"></div>
+
+                    <h6 class="dropdown-header font-weight-bold">Novi sad</h6>
+                    <a class="dropdown-item" href="#">Novi sad Theatre</a>
+                    <div class="dropdown-divider"></div>
+
+                    <h6 class="dropdown-header font-weight-bold">Nis</h6>
+                    <a class="dropdown-item" href="#">Nis Theatre</a>
+                    <div class="dropdown-divider"></div>
+
+                    <h6 class="dropdown-header font-weight-bold">Pristina</h6>
+                    <a class="dropdown-item" href="#">Pristina Theatre</a>
+                    <div class="dropdown-divider"></div>
+
+                    <h6 class="dropdown-header font-weight-bold">Subotica</h6>
+                    <a class="dropdown-item" href="#">Subotica Theatre</a>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <!-- Carousel -->
+            <div id="carouselId" class="col-12 carousel slide row text-center justify-content-center"
+                >
+
+                <!-- Inner slider -->
+                <div class="col-12 carousel-inner text-center justify-content-center" role="listbox">
+                    <!-- Control left -->
+                    <a class=" col-1 carousel-control-prev text-dark d-flex flex-wrap align-items-start"
+                        style="font-size: 40px" href="#carouselId" role="button" data-slide="prev">
+                        <i class="fa fa-caret-left" aria-hidden="true"></i>
+                    </a>
+                    <!-- Slider page -->
+                    <div id="movieItem" class="carousel-item text-center active ">
+                        <!-- page desktop -->
+                        <div class="text-center justify-content-center d-none d-md-block">
+                            <div class="row text-center justify-content-center">
+                                <!-- Slider rows -->
+
+                                <div class="col-3 mx-2" id=" dayRow">
+                                    <h2>Today</h2>
+                                    <div class="window-full overflow-auto" id="itemsSlotInRow">
+                                        <div class="card px-2 my-4" id="cardItem">
+                                            <a href="seats.html" style="text-decoration: none;color:#000000">
+                                                <div class="row">
+                                                    <div
+                                                        class="col-8 mr-0 pr-0 d-flex flex-wrap justify-content-center align-items-center">
+                                                        <h3 style="font-size: 3.5vw">12:30</h3>
+                                                    </div>
+
+                                                    <div class="col-4 ml-0 pl-0">
+                                                        <div class="row justify-content-center">
+                                                            <div class="text-center">
+                                                                <img class="img-fluid" style="width:45%"
+                                                                    src="images/ticket copy.png" alt="">
+                                                                <p style="font-size: 1.2vw"
+                                                                    class="my-0 font-weight-bold">
+                                                                    Hall 1</p>
+                                                                <p style="font-size: 1.2vw" class="my-0 ">3D</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="card px-2 my-4" id="cardItem">
+                                            <a href="seats.html" style="text-decoration: none;color:#000000">
+                                                <div class="row">
+                                                    <div
+                                                        class="col-8 mr-0 pr-0 d-flex flex-wrap justify-content-center align-items-center">
+                                                        <h3 style="font-size: 3.5vw">14:30</h3>
+                                                    </div>
+
+                                                    <div class="col-4 ml-0 pl-0">
+                                                        <div class="row justify-content-center">
+                                                            <div class="text-center">
+                                                                <img class="img-fluid" style="width:45%"
+                                                                    src="images/ticket copy.png" alt="">
+                                                                <p style="font-size: 1.2vw"
+                                                                    class="my-0 font-weight-bold">
+                                                                    Hall 1</p>
+                                                                <p style="font-size: 1.2vw" class="my-0 ">REG</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="card px-2 my-4" id="cardItem">
+                                            <a href="seats.html" style="text-decoration: none;color:#000000">
+                                                <div class="row">
+                                                    <div
+                                                        class="col-8 mr-0 pr-0 d-flex flex-wrap justify-content-center align-items-center">
+                                                        <h3 style="font-size: 3.5vw">15:30</h3>
+                                                    </div>
+
+                                                    <div class="col-4 ml-0 pl-0">
+                                                        <div class="row justify-content-center">
+                                                            <div class="text-center">
+                                                                <img class="img-fluid" style="width:45%"
+                                                                    src="images/ticket copy.png" alt="">
+                                                                <p style="font-size: 1.2vw"
+                                                                    class="my-0 font-weight-bold">
+                                                                    Hall 3</p>
+                                                                <p style="font-size: 1.2vw" class="my-0 ">IMAX</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="card px-2 my-4" id="cardItem">
+                                            <a href="seats.html" style="text-decoration: none;color:#000000">
+                                                <div class="row">
+                                                    <div
+                                                        class="col-8 mr-0 pr-0 d-flex flex-wrap justify-content-center align-items-center">
+                                                        <h3 style="font-size: 3.5vw">18:30</h3>
+                                                    </div>
+
+                                                    <div class="col-4 ml-0 pl-0">
+                                                        <div class="row justify-content-center">
+                                                            <div class="text-center">
+                                                                <img class="img-fluid" style="width:45%"
+                                                                    src="images/ticket copy.png" alt="">
+                                                                <p style="font-size: 1.2vw"
+                                                                    class="my-0 font-weight-bold">
+                                                                    Hall 3</p>
+                                                                <p style="font-size: 1.2vw" class="my-0 ">3D</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="card px-2 my-4" id="cardItem">
+                                            <a href="seats.html" style="text-decoration: none;color:#000000">
+                                                <div class="row">
+                                                    <div
+                                                        class="col-8 mr-0 pr-0 d-flex flex-wrap justify-content-center align-items-center">
+                                                        <h3 style="font-size: 3.5vw">19:00</h3>
+                                                    </div>
+
+                                                    <div class="col-4 ml-0 pl-0">
+                                                        <div class="row justify-content-center">
+                                                            <div class="text-center">
+                                                                <img class="img-fluid" style="width:45%"
+                                                                    src="images/ticket copy.png" alt="">
+                                                                <p style="font-size: 1.2vw"
+                                                                    class="my-0 font-weight-bold">
+                                                                    Hall 5</p>
+                                                                <p style="font-size: 1.2vw" class="my-0 ">3D</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="card px-2 my-4" id="cardItem">
+                                            <a href="seats.html" style="text-decoration: none;color:#000000">
+                                                <div class="row">
+                                                    <div
+                                                        class="col-8 mr-0 pr-0 d-flex flex-wrap justify-content-center align-items-center">
+                                                        <h3 style="font-size: 3.5vw">20:00</h3>
+                                                    </div>
+
+                                                    <div class="col-4 ml-0 pl-0">
+                                                        <div class="row justify-content-center">
+                                                            <div class="text-center">
+                                                                <img class="img-fluid" style="width:45%"
+                                                                    src="images/ticket copy.png" alt="">
+                                                                <p style="font-size: 1.2vw"
+                                                                    class="my-0 font-weight-bold">
+                                                                    Hall 3</p>
+                                                                <p style="font-size: 1.2vw" class="my-0 ">3D</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-3 mx-2" id=" dayRow">
+                                    <h2>Tomorrow</h2>
+                                    <div class="window-full overflow-auto " id="itemsSlotInRow">
+                                        <div class="card px-2 my-4" id="cardItem">
+                                            <a href="seats.html" style="text-decoration: none;color:#000000">
+                                                <div class="row">
+                                                    <div
+                                                        class="col-8 mr-0 pr-0 d-flex flex-wrap justify-content-center align-items-center">
+                                                        <h3 style="font-size: 3.5vw">12:00</h3>
+                                                    </div>
+
+                                                    <div class="col-4 ml-0 pl-0">
+                                                        <div class="row justify-content-center">
+                                                            <div class="text-center">
+                                                                <img class="img-fluid" style="width:45%"
+                                                                    src="images/ticket copy.png" alt="">
+                                                                <p style="font-size: 1.2vw"
+                                                                    class="my-0 font-weight-bold">
+                                                                    Hall 1</p>
+                                                                <p style="font-size: 1.2vw" class="my-0 ">IMAX</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="card px-2 my-4" id="cardItem">
+                                            <a href="seats.html" style="text-decoration: none;color:#000000">
+                                                <div class="row">
+                                                    <div
+                                                        class="col-8 mr-0 pr-0 d-flex flex-wrap justify-content-center align-items-center">
+                                                        <h3 style="font-size: 3.5vw">14:00</h3>
+                                                    </div>
+
+                                                    <div class="col-4 ml-0 pl-0">
+                                                        <div class="row justify-content-center">
+                                                            <div class="text-center">
+                                                                <img class="img-fluid" style="width:45%"
+                                                                    src="images/ticket copy.png" alt="">
+                                                                <p style="font-size: 1.2vw"
+                                                                    class="my-0 font-weight-bold">
+                                                                    Hall 1</p>
+                                                                <p style="font-size: 1.2vw" class="my-0 ">REG</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="card px-2 my-4" id="cardItem">
+                                            <a href="seats.html" style="text-decoration: none;color:#000000">
+                                                <div class="row">
+                                                    <div
+                                                        class="col-8 mr-0 pr-0 d-flex flex-wrap justify-content-center align-items-center">
+                                                        <h3 style="font-size: 3.5vw">16:30</h3>
+                                                    </div>
+
+                                                    <div class="col-4 ml-0 pl-0">
+                                                        <div class="row justify-content-center">
+                                                            <div class="text-center">
+                                                                <img class="img-fluid" style="width:45%"
+                                                                    src="images/ticket copy.png" alt="">
+                                                                <p style="font-size: 1.2vw"
+                                                                    class="my-0 font-weight-bold">
+                                                                    Hall 3</p>
+                                                                <p style="font-size: 1.2vw" class="my-0 ">IMAX</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="card px-2 my-4" id="cardItem">
+                                            <a href="seats.html" style="text-decoration: none;color:#000000">
+                                                <div class="row">
+                                                    <div
+                                                        class="col-8 mr-0 pr-0 d-flex flex-wrap justify-content-center align-items-center">
+                                                        <h3 style="font-size: 3.5vw">17:30</h3>
+                                                    </div>
+
+                                                    <div class="col-4 ml-0 pl-0">
+                                                        <div class="row justify-content-center">
+                                                            <div class="text-center">
+                                                                <img class="img-fluid" style="width:45%"
+                                                                    src="images/ticket copy.png" alt="">
+                                                                <p style="font-size: 1.2vw"
+                                                                    class="my-0 font-weight-bold">
+                                                                    Hall 2</p>
+                                                                <p style="font-size: 1.2vw" class="my-0 ">3D</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="card px-2 my-4" id="cardItem">
+                                            <a href="seats.html" style="text-decoration: none;color:#000000">
+                                                <div class="row">
+                                                    <div
+                                                        class="col-8 mr-0 pr-0 d-flex flex-wrap justify-content-center align-items-center">
+                                                        <h3 style="font-size: 3.5vw">18:00</h3>
+                                                    </div>
+
+                                                    <div class="col-4 ml-0 pl-0">
+                                                        <div class="row justify-content-center">
+                                                            <div class="text-center">
+                                                                <img class="img-fluid" style="width:45%"
+                                                                    src="images/ticket copy.png" alt="">
+                                                                <p style="font-size: 1.2vw"
+                                                                    class="my-0 font-weight-bold">
+                                                                    Hall 6</p>
+                                                                <p style="font-size: 1.2vw" class="my-0 ">REG</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="card px-2 my-4" id="cardItem">
+                                            <a href="seats.html" style="text-decoration: none;color:#000000">
+                                                <div class="row">
+                                                    <div
+                                                        class="col-8 mr-0 pr-0 d-flex flex-wrap justify-content-center align-items-center">
+                                                        <h3 style="font-size: 3.5vw">20:00</h3>
+                                                    </div>
+
+                                                    <div class="col-4 ml-0 pl-0">
+                                                        <div class="row justify-content-center">
+                                                            <div class="text-center">
+                                                                <img class="img-fluid" style="width:45%"
+                                                                    src="images/ticket copy.png" alt="">
+                                                                <p style="font-size: 1.2vw"
+                                                                    class="my-0 font-weight-bold">
+                                                                    Hall 3</p>
+                                                                <p style="font-size: 1.2vw" class="my-0 ">3D</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-3 mx-2" id=" dayRow">
+                                    <h2>Wednesday</h2>
+                                    <div class="window-full overflow-auto" id="itemsSlotInRow">
+                                        <div class="card px-2 my-4" id="cardItem">
+                                            <a href="seats.html" style="text-decoration: none;color:#000000">
+                                                <div class="row">
+                                                    <div
+                                                        class="col-8 mr-0 pr-0 d-flex flex-wrap justify-content-center align-items-center">
+                                                        <h3 style="font-size: 3.5vw">11:30</h3>
+                                                    </div>
+
+                                                    <div class="col-4 ml-0 pl-0">
+                                                        <div class="row justify-content-center">
+                                                            <div class="text-center">
+                                                                <img class="img-fluid" style="width:45%"
+                                                                    src="images/ticket copy.png" alt="">
+                                                                <p style="font-size: 1.2vw"
+                                                                    class="my-0 font-weight-bold">
+                                                                    Hall 1</p>
+                                                                <p style="font-size: 1.2vw" class="my-0 ">3D</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="card px-2 my-4" id="cardItem">
+                                            <a href="seats.html" style="text-decoration: none;color:#000000">
+                                                <div class="row">
+                                                    <div
+                                                        class="col-8 mr-0 pr-0 d-flex flex-wrap justify-content-center align-items-center">
+                                                        <h3 style="font-size: 3.5vw">13:30</h3>
+                                                    </div>
+
+                                                    <div class="col-4 ml-0 pl-0">
+                                                        <div class="row justify-content-center">
+                                                            <div class="text-center">
+                                                                <img class="img-fluid" style="width:45%"
+                                                                    src="images/ticket copy.png" alt="">
+                                                                <p style="font-size: 1.2vw"
+                                                                    class="my-0 font-weight-bold">
+                                                                    Hall 1</p>
+                                                                <p style="font-size: 1.2vw" class="my-0 ">3D</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="card px-2 my-4" id="cardItem">
+                                            <a href="seats.html" style="text-decoration: none;color:#000000">
+                                                <div class="row">
+                                                    <div
+                                                        class="col-8 mr-0 pr-0 d-flex flex-wrap justify-content-center align-items-center">
+                                                        <h3 style="font-size: 3.5vw">16:00</h3>
+                                                    </div>
+
+                                                    <div class="col-4 ml-0 pl-0">
+                                                        <div class="row justify-content-center">
+                                                            <div class="text-center">
+                                                                <img class="img-fluid" style="width:45%"
+                                                                    src="images/ticket copy.png" alt="">
+                                                                <p style="font-size: 1.2vw"
+                                                                    class="my-0 font-weight-bold">
+                                                                    Hall 3</p>
+                                                                <p style="font-size: 1.2vw" class="my-0 ">REG</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="card px-2 my-4" id="cardItem">
+                                            <a href="seats.html" style="text-decoration: none;color:#000000">
+                                                <div class="row">
+                                                    <div
+                                                        class="col-8 mr-0 pr-0 d-flex flex-wrap justify-content-center align-items-center">
+                                                        <h3 style="font-size: 3.5vw">18:30</h3>
+                                                    </div>
+
+                                                    <div class="col-4 ml-0 pl-0">
+                                                        <div class="row justify-content-center">
+                                                            <div class="text-center">
+                                                                <img class="img-fluid" style="width:45%"
+                                                                    src="images/ticket copy.png" alt="">
+                                                                <p style="font-size: 1.2vw"
+                                                                    class="my-0 font-weight-bold">
+                                                                    Hall 3</p>
+                                                                <p style="font-size: 1.2vw" class="my-0 ">IMAX</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="card px-2 my-4" id="cardItem">
+                                            <a href="seats.html" style="text-decoration: none;color:#000000">
+                                                <div class="row">
+                                                    <div
+                                                        class="col-8 mr-0 pr-0 d-flex flex-wrap justify-content-center align-items-center">
+                                                        <h3 style="font-size: 3.5vw">20:00</h3>
+                                                    </div>
+
+                                                    <div class="col-4 ml-0 pl-0">
+                                                        <div class="row justify-content-center">
+                                                            <div class="text-center">
+                                                                <img class="img-fluid" style="width:45%"
+                                                                    src="images/ticket copy.png" alt="">
+                                                                <p style="font-size: 1.2vw"
+                                                                    class="my-0 font-weight-bold">
+                                                                    Hall 5</p>
+                                                                <p style="font-size: 1.2vw" class="my-0 ">3D</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="card px-2 my-4" id="cardItem">
+                                            <a href="seats.html" style="text-decoration: none;color:#000000">
+                                                <div class="row">
+                                                    <div
+                                                        class="col-8 mr-0 pr-0 d-flex flex-wrap justify-content-center align-items-center">
+                                                        <h3 style="font-size: 3.5vw">20:30</h3>
+                                                    </div>
+
+                                                    <div class="col-4 ml-0 pl-0">
+                                                        <div class="row justify-content-center">
+                                                            <div class="text-center">
+                                                                <img class="img-fluid" style="width:45%"
+                                                                    src="images/ticket copy.png" alt="">
+                                                                <p style="font-size: 1.2vw"
+                                                                    class="my-0 font-weight-bold">
+                                                                    Hall 3</p>
+                                                                <p style="font-size: 1.2vw" class="my-0 ">3D</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div id="movieItem" class="carousel-item text-center ">
+                        <!-- page desktop -->
+                        <div class="text-center justify-content-center d-none d-md-block">
+                            <div class="row text-center justify-content-center">
+                                <!-- Slider rows -->
+
+                                <div class="col-3 mx-2" id=" dayRow">
+                                    <h2>Thursday</h2>
+                                    <div class="window-full overflow-auto" id="itemsSlotInRow">
+                                        <div class="card px-2 my-4" id="cardItem">
+                                            <a href="seats.html" style="text-decoration: none;color:#000000">
+                                                <div class="row">
+                                                    <div
+                                                        class="col-8 mr-0 pr-0 d-flex flex-wrap justify-content-center align-items-center">
+                                                        <h3 style="font-size: 3.5vw">11:30</h3>
+                                                    </div>
+
+                                                    <div class="col-4 ml-0 pl-0">
+                                                        <div class="row justify-content-center">
+                                                            <div class="text-center">
+                                                                <img class="img-fluid" style="width:45%"
+                                                                    src="images/ticket copy.png" alt="">
+                                                                <p style="font-size: 1.2vw"
+                                                                    class="my-0 font-weight-bold">
+                                                                    Hall 1</p>
+                                                                <p style="font-size: 1.2vw" class="my-0 ">3D</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="card px-2 my-4" id="cardItem">
+                                            <a href="seats.html" style="text-decoration: none;color:#000000">
+                                                <div class="row">
+                                                    <div
+                                                        class="col-8 mr-0 pr-0 d-flex flex-wrap justify-content-center align-items-center">
+                                                        <h3 style="font-size: 3.5vw">13:30</h3>
+                                                    </div>
+
+                                                    <div class="col-4 ml-0 pl-0">
+                                                        <div class="row justify-content-center">
+                                                            <div class="text-center">
+                                                                <img class="img-fluid" style="width:45%"
+                                                                    src="images/ticket copy.png" alt="">
+                                                                <p style="font-size: 1.2vw"
+                                                                    class="my-0 font-weight-bold">
+                                                                    Hall 1</p>
+                                                                <p style="font-size: 1.2vw" class="my-0 ">3D</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="card px-2 my-4" id="cardItem">
+                                            <a href="seats.html" style="text-decoration: none;color:#000000">
+                                                <div class="row">
+                                                    <div
+                                                        class="col-8 mr-0 pr-0 d-flex flex-wrap justify-content-center align-items-center">
+                                                        <h3 style="font-size: 3.5vw">16:00</h3>
+                                                    </div>
+
+                                                    <div class="col-4 ml-0 pl-0">
+                                                        <div class="row justify-content-center">
+                                                            <div class="text-center">
+                                                                <img class="img-fluid" style="width:45%"
+                                                                    src="images/ticket copy.png" alt="">
+                                                                <p style="font-size: 1.2vw"
+                                                                    class="my-0 font-weight-bold">
+                                                                    Hall 3</p>
+                                                                <p style="font-size: 1.2vw" class="my-0 ">REG</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="card px-2 my-4" id="cardItem">
+                                            <a href="seats.html" style="text-decoration: none;color:#000000">
+                                                <div class="row">
+                                                    <div
+                                                        class="col-8 mr-0 pr-0 d-flex flex-wrap justify-content-center align-items-center">
+                                                        <h3 style="font-size: 3.5vw">18:30</h3>
+                                                    </div>
+
+                                                    <div class="col-4 ml-0 pl-0">
+                                                        <div class="row justify-content-center">
+                                                            <div class="text-center">
+                                                                <img class="img-fluid" style="width:45%"
+                                                                    src="images/ticket copy.png" alt="">
+                                                                <p style="font-size: 1.2vw"
+                                                                    class="my-0 font-weight-bold">
+                                                                    Hall 3</p>
+                                                                <p style="font-size: 1.2vw" class="my-0 ">IMAX</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="card px-2 my-4" id="cardItem">
+                                            <a href="seats.html" style="text-decoration: none;color:#000000">
+                                                <div class="row">
+                                                    <div
+                                                        class="col-8 mr-0 pr-0 d-flex flex-wrap justify-content-center align-items-center">
+                                                        <h3 style="font-size: 3.5vw">20:00</h3>
+                                                    </div>
+
+                                                    <div class="col-4 ml-0 pl-0">
+                                                        <div class="row justify-content-center">
+                                                            <div class="text-center">
+                                                                <img class="img-fluid" style="width:45%"
+                                                                    src="images/ticket copy.png" alt="">
+                                                                <p style="font-size: 1.2vw"
+                                                                    class="my-0 font-weight-bold">
+                                                                    Hall 5</p>
+                                                                <p style="font-size: 1.2vw" class="my-0 ">3D</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="card px-2 my-4" id="cardItem">
+                                            <a href="seats.html" style="text-decoration: none;color:#000000">
+                                                <div class="row">
+                                                    <div
+                                                        class="col-8 mr-0 pr-0 d-flex flex-wrap justify-content-center align-items-center">
+                                                        <h3 style="font-size: 3.5vw">20:30</h3>
+                                                    </div>
+
+                                                    <div class="col-4 ml-0 pl-0">
+                                                        <div class="row justify-content-center">
+                                                            <div class="text-center">
+                                                                <img class="img-fluid" style="width:45%"
+                                                                    src="images/ticket copy.png" alt="">
+                                                                <p style="font-size: 1.2vw"
+                                                                    class="my-0 font-weight-bold">
+                                                                    Hall 3</p>
+                                                                <p style="font-size: 1.2vw" class="my-0 ">3D</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-3 mx-2" id=" dayRow">
+                                    <h2>Friday</h2>
+                                    <div class="window-full overflow-auto" id="itemsSlotInRow">
+                                        <div class="card px-2 my-4" id="cardItem">
+                                            <a href="seats.html" style="text-decoration: none;color:#000000">
+                                                <div class="row">
+                                                    <div
+                                                        class="col-8 mr-0 pr-0 d-flex flex-wrap justify-content-center align-items-center">
+                                                        <h3 style="font-size: 3.5vw">12:30</h3>
+                                                    </div>
+
+                                                    <div class="col-4 ml-0 pl-0">
+                                                        <div class="row justify-content-center">
+                                                            <div class="text-center">
+                                                                <img class="img-fluid" style="width:45%"
+                                                                    src="images/ticket copy.png" alt="">
+                                                                <p style="font-size: 1.2vw"
+                                                                    class="my-0 font-weight-bold">
+                                                                    Hall 1</p>
+                                                                <p style="font-size: 1.2vw" class="my-0 ">3D</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="card px-2 my-4" id="cardItem">
+                                            <a href="seats.html" style="text-decoration: none;color:#000000">
+                                                <div class="row">
+                                                    <div
+                                                        class="col-8 mr-0 pr-0 d-flex flex-wrap justify-content-center align-items-center">
+                                                        <h3 style="font-size: 3.5vw">14:30</h3>
+                                                    </div>
+
+                                                    <div class="col-4 ml-0 pl-0">
+                                                        <div class="row justify-content-center">
+                                                            <div class="text-center">
+                                                                <img class="img-fluid" style="width:45%"
+                                                                    src="images/ticket copy.png" alt="">
+                                                                <p style="font-size: 1.2vw"
+                                                                    class="my-0 font-weight-bold">
+                                                                    Hall 1</p>
+                                                                <p style="font-size: 1.2vw" class="my-0 ">REG</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="card px-2 my-4" id="cardItem">
+                                            <a href="seats.html" style="text-decoration: none;color:#000000">
+                                                <div class="row">
+                                                    <div
+                                                        class="col-8 mr-0 pr-0 d-flex flex-wrap justify-content-center align-items-center">
+                                                        <h3 style="font-size: 3.5vw">15:30</h3>
+                                                    </div>
+
+                                                    <div class="col-4 ml-0 pl-0">
+                                                        <div class="row justify-content-center">
+                                                            <div class="text-center">
+                                                                <img class="img-fluid" style="width:45%"
+                                                                    src="images/ticket copy.png" alt="">
+                                                                <p style="font-size: 1.2vw"
+                                                                    class="my-0 font-weight-bold">
+                                                                    Hall 3</p>
+                                                                <p style="font-size: 1.2vw" class="my-0 ">IMAX</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="card px-2 my-4" id="cardItem">
+                                            <a href="seats.html" style="text-decoration: none;color:#000000">
+                                                <div class="row">
+                                                    <div
+                                                        class="col-8 mr-0 pr-0 d-flex flex-wrap justify-content-center align-items-center">
+                                                        <h3 style="font-size: 3.5vw">18:30</h3>
+                                                    </div>
+
+                                                    <div class="col-4 ml-0 pl-0">
+                                                        <div class="row justify-content-center">
+                                                            <div class="text-center">
+                                                                <img class="img-fluid" style="width:45%"
+                                                                    src="images/ticket copy.png" alt="">
+                                                                <p style="font-size: 1.2vw"
+                                                                    class="my-0 font-weight-bold">
+                                                                    Hall 3</p>
+                                                                <p style="font-size: 1.2vw" class="my-0 ">3D</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="card px-2 my-4" id="cardItem">
+                                            <a href="seats.html" style="text-decoration: none;color:#000000">
+                                                <div class="row">
+                                                    <div
+                                                        class="col-8 mr-0 pr-0 d-flex flex-wrap justify-content-center align-items-center">
+                                                        <h3 style="font-size: 3.5vw">19:00</h3>
+                                                    </div>
+
+                                                    <div class="col-4 ml-0 pl-0">
+                                                        <div class="row justify-content-center">
+                                                            <div class="text-center">
+                                                                <img class="img-fluid" style="width:45%"
+                                                                    src="images/ticket copy.png" alt="">
+                                                                <p style="font-size: 1.2vw"
+                                                                    class="my-0 font-weight-bold">
+                                                                    Hall 5</p>
+                                                                <p style="font-size: 1.2vw" class="my-0 ">3D</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="card px-2 my-4" id="cardItem">
+                                            <a href="seats.html" style="text-decoration: none;color:#000000">
+                                                <div class="row">
+                                                    <div
+                                                        class="col-8 mr-0 pr-0 d-flex flex-wrap justify-content-center align-items-center">
+                                                        <h3 style="font-size: 3.5vw">20:00</h3>
+                                                    </div>
+
+                                                    <div class="col-4 ml-0 pl-0">
+                                                        <div class="row justify-content-center">
+                                                            <div class="text-center">
+                                                                <img class="img-fluid" style="width:45%"
+                                                                    src="images/ticket copy.png" alt="">
+                                                                <p style="font-size: 1.2vw"
+                                                                    class="my-0 font-weight-bold">
+                                                                    Hall 3</p>
+                                                                <p style="font-size: 1.2vw" class="my-0 ">3D</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-3 mx-2" id=" dayRow">
+                                    <h2>Saturday</h2>
+                                    <div class="window-full overflow-auto" id="itemsSlotInRow">
+                                        <div class="card px-2 my-4" id="cardItem">
+                                            <a href="seats.html" style="text-decoration: none;color:#000000">
+                                                <div class="row">
+                                                    <div
+                                                        class="col-8 mr-0 pr-0 d-flex flex-wrap justify-content-center align-items-center">
+                                                        <h3 style="font-size: 3.5vw">12:00</h3>
+                                                    </div>
+
+                                                    <div class="col-4 ml-0 pl-0">
+                                                        <div class="row justify-content-center">
+                                                            <div class="text-center">
+                                                                <img class="img-fluid" style="width:45%"
+                                                                    src="images/ticket copy.png" alt="">
+                                                                <p style="font-size: 1.2vw"
+                                                                    class="my-0 font-weight-bold">
+                                                                    Hall 1</p>
+                                                                <p style="font-size: 1.2vw" class="my-0 ">IMAX</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="card px-2 my-4" id="cardItem">
+                                            <a href="seats.html" style="text-decoration: none;color:#000000">
+                                                <div class="row">
+                                                    <div
+                                                        class="col-8 mr-0 pr-0 d-flex flex-wrap justify-content-center align-items-center">
+                                                        <h3 style="font-size: 3.5vw">14:00</h3>
+                                                    </div>
+
+                                                    <div class="col-4 ml-0 pl-0">
+                                                        <div class="row justify-content-center">
+                                                            <div class="text-center">
+                                                                <img class="img-fluid" style="width:45%"
+                                                                    src="images/ticket copy.png" alt="">
+                                                                <p style="font-size: 1.2vw"
+                                                                    class="my-0 font-weight-bold">
+                                                                    Hall 1</p>
+                                                                <p style="font-size: 1.2vw" class="my-0 ">REG</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="card px-2 my-4" id="cardItem">
+                                            <a href="seats.html" style="text-decoration: none;color:#000000">
+                                                <div class="row">
+                                                    <div
+                                                        class="col-8 mr-0 pr-0 d-flex flex-wrap justify-content-center align-items-center">
+                                                        <h3 style="font-size: 3.5vw">16:30</h3>
+                                                    </div>
+
+                                                    <div class="col-4 ml-0 pl-0">
+                                                        <div class="row justify-content-center">
+                                                            <div class="text-center">
+                                                                <img class="img-fluid" style="width:45%"
+                                                                    src="images/ticket copy.png" alt="">
+                                                                <p style="font-size: 1.2vw"
+                                                                    class="my-0 font-weight-bold">
+                                                                    Hall 3</p>
+                                                                <p style="font-size: 1.2vw" class="my-0 ">IMAX</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="card px-2 my-4" id="cardItem">
+                                            <a href="seats.html" style="text-decoration: none;color:#000000">
+                                                <div class="row">
+                                                    <div
+                                                        class="col-8 mr-0 pr-0 d-flex flex-wrap justify-content-center align-items-center">
+                                                        <h3 style="font-size: 3.5vw">17:30</h3>
+                                                    </div>
+
+                                                    <div class="col-4 ml-0 pl-0">
+                                                        <div class="row justify-content-center">
+                                                            <div class="text-center">
+                                                                <img class="img-fluid" style="width:45%"
+                                                                    src="images/ticket copy.png" alt="">
+                                                                <p style="font-size: 1.2vw"
+                                                                    class="my-0 font-weight-bold">
+                                                                    Hall 2</p>
+                                                                <p style="font-size: 1.2vw" class="my-0 ">3D</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="card px-2 my-4" id="cardItem">
+                                            <a href="seats.html" style="text-decoration: none;color:#000000">
+                                                <div class="row">
+                                                    <div
+                                                        class="col-8 mr-0 pr-0 d-flex flex-wrap justify-content-center align-items-center">
+                                                        <h3 style="font-size: 3.5vw">18:00</h3>
+                                                    </div>
+
+                                                    <div class="col-4 ml-0 pl-0">
+                                                        <div class="row justify-content-center">
+                                                            <div class="text-center">
+                                                                <img class="img-fluid" style="width:45%"
+                                                                    src="images/ticket copy.png" alt="">
+                                                                <p style="font-size: 1.2vw"
+                                                                    class="my-0 font-weight-bold">
+                                                                    Hall 6</p>
+                                                                <p style="font-size: 1.2vw" class="my-0 ">REG</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="card px-2 my-4" id="cardItem">
+                                            <a href="seats.html" style="text-decoration: none;color:#000000">
+                                                <div class="row">
+                                                    <div
+                                                        class="col-8 mr-0 pr-0 d-flex flex-wrap justify-content-center align-items-center">
+                                                        <h3 style="font-size: 3.5vw">20:00</h3>
+                                                    </div>
+
+                                                    <div class="col-4 ml-0 pl-0">
+                                                        <div class="row justify-content-center">
+                                                            <div class="text-center">
+                                                                <img class="img-fluid" style="width:45%"
+                                                                    src="images/ticket copy.png" alt="">
+                                                                <p style="font-size: 1.2vw"
+                                                                    class="my-0 font-weight-bold">
+                                                                    Hall 3</p>
+                                                                <p style="font-size: 1.2vw" class="my-0 ">3D</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Control right -->
+                    <a class="col-1 carousel-control-next text-dark d-flex flex-wrap align-items-start "
+                        style="font-size: 40px" href="#carouselId" role="button" data-slide="next">
+                        <i class="fa fa-caret-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+
+
+    <script>
+        $(document).ready(function () {
+
+            //Stopira Carousel Slide
+            $('.carousel').carousel({
+                interval: false
+            })
+
+
+            // Resize za scroll item-a
+            var elements = document.getElementsByClassName('window-full');
+            console.log();
+
+
+            fullheight(elements);
+
+            function fullheight(elements) {
+                let navbar = document.getElementById('divnav');
+                let windowheight = (window.innerHeight - navbar.getBoundingClientRect().height - 250) + "px";
+                for (let el in elements) {
+                    if (elements.hasOwnProperty(el)) {
+                        elements[el].style.height = windowheight;
+                    }
+                }
+            }
+
+            window.onresize = function (event) {
+                fullheight(elements);
+            }
+
+            // dropdown change text
+            $(function () {
+
+                $("#dropdown a").click(function () {
+                    var btn = $("#dropdownMenuButton");
+                    $('.carousel').carousel('next');
+
+                    btn.text($(this).text());
+
+                });
+
+            });
+
+
+
+        });
+    </script>
 </body>
 
 </html>
