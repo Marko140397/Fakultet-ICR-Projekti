@@ -163,7 +163,7 @@
                                 </div>
                             </div>
                             <div class="px-2 py-2">
-                                <img class="img-fluid" src="images/credit.png" alt="">
+                                <img class="img-fluid" src="images/credit.png" style="width:60%" alt="">
                             </div>
                         </div>
                     </div>
@@ -173,38 +173,143 @@
             <div class="col-1"></div>
 
             <nav class="col-3" id="nav-target">
-                    <a class="navbar-brand" style="text-decoration: none;color:#000000" href="#cashFieldDiv">
-                        <div>
-                            <div class="jumbotron bg-white shadow-lg px-5 py-2 justify-content-center text-center"
-                                value="not" id="cash">
-                                <div class="row text-center justify-content-center " id="innerdiv1">
-                                    <div class="col-3 pl-0 pr-4 d-flex flex-wrap align-items-center" id="innerdiv2">
-                                        <img src="images/notselected.png" style="width:60%" class="img-fluid" alt=""
-                                            id="innerimg">
-                                    </div>
-                                    <div class="col-7 d-flex flex-wrap align-items-center text-left pl-0">
-                                        <p style="font-size: 1.5vw" class="my-0">Cash</p>
-                                    </div>
+                <a class="navbar-brand" style="text-decoration: none;color:#000000" href="#cashFieldDiv">
+                    <div>
+                        <div class="jumbotron bg-white shadow-lg px-5 py-2 justify-content-center text-center"
+                            value="not" id="cash">
+                            <div class="row text-center justify-content-center " id="innerdiv1">
+                                <div class="col-3 pl-0 pr-4 d-flex flex-wrap align-items-center" id="innerdiv2">
+                                    <img src="images/notselected.png" style="width:60%" class="img-fluid" alt=""
+                                        id="innerimg">
                                 </div>
-                                <div class="px-2 py-2">
-                                    <img class="img-fluid" src="images/dollar.png" alt="">
+                                <div class="col-7 d-flex flex-wrap align-items-center text-left pl-0">
+                                    <p style="font-size: 1.5vw" class="my-0">Cash</p>
                                 </div>
                             </div>
+                            <div class="px-2 py-2">
+                                <img class="img-fluid" src="images/dollar.png" style="width:60%" alt="">
+                            </div>
                         </div>
-                    </a>
-                </nav>
+                    </div>
+                </a>
+            </nav>
 
         </div>
 
-        <div data-spy="scroll" data-target="#nav-target">
+        <div data-spy="scroll" data-target="#nav-target" class="row justify-content-center mb-5">
             <!-- Fields Div Credit -->
-            <div class="d-none" id="creditFieldDiv">
-                
+            <div class="d-none col-8" id="creditFieldDiv">
+                <form class="needs-validation" action="paymentSuccess.html" novalidate>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputName">Name</label>
+                            <input type="text" class="form-control" id="inputName"  placeholder="Name" required>
+                            <div class="invalid-feedback">
+                                Please enter your name.
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputLastName">Last name</label>
+                            <input type="text" class="form-control" id="inputLastName" placeholder="Last name" required>
+                            <div class="invalid-feedback">
+                                    Please enter your last name.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row ">
+                        <div class="form-group col-md-6"">
+                            <label for=" inputCreditCard">Credit Card Number</label>
+                            <input type="text" pattern="\d{16}" maxlength="16" class="form-control" id="inputCreditCard"
+                                placeholder="1111-1111-1111-1111" required>
+                                <div class="invalid-feedback">
+                                        Please enter a valid credit card number.
+                                </div>
+                        </div>
+                        <div class="form-group col-md-2"">
+                            <label for=" inputCSV">CSV</label>
+                            <input type="text" pattern="\d{3}" maxlength="3" class="form-control" id="inputCSV" placeholder="111" required>
+                            <div class="invalid-feedback">
+                                    Enter CSV.
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputCity">City</label>
+                            <input type="text" class="form-control" id="inputCity" placeholder="City" required>
+                            <div class="invalid-feedback">
+                                    Please enter your city.
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="inputState">Country</label>
+                            <select id="inputState" class="form-control" required>
+                                <option selected>Serbia</option>
+                                <option>Montenegro</option>
+                                <option>Romania</option>
+                                <option>Greece</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                    Please select your country.
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="inputZip">Zip</label>
+                            <input  class="form-control" id="inputZip" type="text" pattern="\d*" maxlength="5" placeholder="11000" required>
+                            <div class="invalid-feedback">
+                                    Please enter your zip code.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail">E-mail</label>
+                            <input type="email" class="form-control" id="inputEmail" placeholder="email@gmail.com"  required>
+                            <div class="invalid-feedback">
+                                    Please enter a valid email addres.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-6">
+                            <button type="submit" class="btn btn-block btn-danger">Buy</button>
+                            
+                        </div>
+                    </div>
+
+                </form>
             </div>
             <!-- Fields Div Cash-->
-            <div class="d-none" id="cashFieldDiv">
-               
-            </div>
+            <div class="d-none col-8" id="cashFieldDiv">
+                    <form class="needs-validation" action="paymentSuccess.html" novalidate>
+                        <div class="form-row justify-content-center">
+                            <div class="form-group col-6">
+                                <label for="inputEmail">Enter email:</label>
+                                <input type="email" class="form-control" id="inputEmail" placeholder="email@gmail.com"  required>
+                                <div class="invalid-feedback">
+                                        Please enter a valid email addres.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center text-center">
+                            <div class="col-4">
+                                    <p class="" style="font-size: 1.3vw">Payment will be completed once you pick up your tickets !</p>
+
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            
+                            <div class="col-6">
+                                <button type="submit" class="btn btn-block btn-danger">Finish</button>
+                            </div>
+                        </div>
+    
+                    </form>
+                </div>
         </div>
 
     </div>
@@ -233,32 +338,48 @@
 
             function select(jumbo) {
                 jumbo.attr('class',
-                "jumbotron bg-light shadow-sm px-5 py-2 justify-content-center text-center");
+                    "jumbotron bg-light shadow-sm px-5 py-2 justify-content-center text-center");
                 jumbo.attr('value', "selected");
                 var img = jumbo.children('#innerdiv1').children('#innerdiv2').children('#innerimg');
                 img.attr('src', "images/selected.png");
 
                 if (jumbo.attr('id') === 'credit') {
-                    $('#creditFieldDiv').attr('class', 'd-block');
+                    $('#creditFieldDiv').attr('class', 'd-block col-6');
                 } else {
-                    $('#cashFieldDiv').attr('class', 'd-block');
+                    $('#cashFieldDiv').attr('class', 'd-block col-6');
                 }
             }
 
             function deselect(jumbo) {
                 jumbo.attr('class',
-                "jumbotron bg-white shadow-lg px-5 py-2 justify-content-center text-center");
+                    "jumbotron bg-white shadow-lg px-5 py-2 justify-content-center text-center");
                 jumbo.attr('value', "not");
                 var img = jumbo.children('#innerdiv1').children('#innerdiv2').children('#innerimg');
                 img.attr('src', "images/notselected.png");
 
                 if (jumbo.attr('id') === 'credit') {
-                    $('#creditFieldDiv').attr('class', 'd-none');
+                    $('#creditFieldDiv').attr('class', 'd-none col-6');
                 } else {
-                    $('#cashFieldDiv').attr('class', 'd-none');
+                    $('#cashFieldDiv').attr('class', 'd-none col-6');
                 }
             }
 
+
+            // VALIDATION
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+            
+            
 
         });
     </script>
