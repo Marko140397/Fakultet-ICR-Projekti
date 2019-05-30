@@ -20,8 +20,8 @@
 </head>
 
 <body>
-    <!-- TODO selector -->
-    <!-- TODO FIX MOBILE -->
+    
+    
     <nav class='navbar sticky-top navbar-expand-md navbar-light bg-white row shadow' id="divnav">
 
         <!--   Menu toggle    -->
@@ -418,7 +418,7 @@
         </div>
 
 
-
+        <!-- TODO Mobile Layout FIX -->
 
         <!-- Special Offers Desktop-->
         <div class="col-md-4 d-none d-md-block">
@@ -440,15 +440,15 @@
                                 </a>
                                 <div class="col-9">
                                     <div class="text-left">
-                                        <h6 class="my-1 mt-1">John Wick 3: 2 Tickets</h6>
-                                        <p class="my-0 font-weight-bold">11.20$</p>
+                                        <h6 class="my-1 mt-1" style="font-size: 1vw">John Wick 3: 2 Tickets</h6>
+                                        <p class="my-0 font-weight-bold"style="font-size: 1vw">11.20$</p>
                                     </div>
                                     <div class="row">
                                         <div class="col-4 text-left">
-                                            <p class="my-1 mr-1 ml-0 text-success">20% Discount</p>
+                                            <p class="my-1 mr-1 ml-0 text-success"style="font-size: 1vw">20% Discount</p>
                                         </div>
                                         <div class="col-8 text-center">
-                                            <a class="btn btn-danger my-1 ml-0 mr-1" href="buyTickets.html">Buy
+                                            <a class="btn btn-danger my-1 ml-0 mr-1"style="font-size: 1.2vw" href="buyTickets.html">Buy
                                                 Tickets</a>
                                         </div>
                                     </div>
@@ -465,15 +465,15 @@
                                 </a>
                                 <div class="col-9">
                                     <div class="text-left">
-                                        <h6 class="my-1 mt-1">Star Wars: 3 Tickets</h6>
-                                        <p class="my-0 font-weight-bold">15.75$</p>
+                                        <h6 class="my-1 mt-1"style="font-size: 1vw">Star Wars: 3 Tickets</h6>
+                                        <p class="my-0 font-weight-bold"style="font-size: 1vw">15.75$</p>
                                     </div>
                                     <div class="row">
                                         <div class="col-4 text-left">
-                                            <p class="my-1 mr-1 ml-0 text-success">25% Discount</p>
+                                            <p class="my-1 mr-1 ml-0 text-success"style="font-size: 1vw">25% Discount</p>
                                         </div>
                                         <div class="col-8 text-center">
-                                            <a class="btn btn-danger my-1 ml-0 mr-1" href="buyTickets.html">Buy
+                                            <a class="btn btn-danger my-1 ml-0 mr-1"style="font-size: 1.2vw" href="buyTickets.html">Buy
                                                 Tickets</a>
                                         </div>
                                     </div>
@@ -520,6 +520,36 @@
 
                 $that.parent().find('button').removeClass('active');
                 $that.addClass('active');
+
+                var movieChildren = $('#movieList').children();
+                var randMovieChildren = randomizeMovies(movieChildren);
+                $('#movieList').html("");
+                $('#movieList').append(randMovieChildren);
+                $('#currentCategory').text($that.text());
+                
+
+            });
+
+            function randomizeMovies(a) {
+                for (let i = a.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [a[i], a[j]] = [a[j], a[i]];
+                }
+                return a;
+            }
+
+            // Combo selection
+            $('#categorySpinner').change(function (e) {
+                e.preventDefault()
+
+                $that = $(this).find(":selected");
+                
+                var movieChildren = $('#movieList').children();
+                var randMovieChildren = randomizeMovies(movieChildren);
+                $('#movieList').html("");
+                $('#movieList').append(randMovieChildren);
+                $('#currentCategory').text($that.text());
+
             });
 
             //CountDown
