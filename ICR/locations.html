@@ -60,8 +60,10 @@
         </div>
 
         <!-- Search Mobile -->
-        <div class="mr-4 d-block d-md-none" id="searchBtn">
-            <button class="btn btn-outline-dark" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+        <div class="mr-4 d-block d-md-none" >
+                <a id="logMobile" href="login.html" class="btn" style="font-size: 30" id="locindempty">
+                    <i class="fa fa-user-circle" aria-hidden="true"></i>
+                </a>
         </div>
 
         <!-- Menu items -->
@@ -114,13 +116,22 @@
             </ul>
         </div>
 
-        <!-- Search Desktop -->
-        <div class="col-3 d-none d-md-block">
-            <form class="form-inline">
-                <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-danger ml-1" type="submit"><i class="fa fa-search"
-                        aria-hidden="true"></i></button>
-            </form>
+        
+        <!-- Register Desktop -->
+        <div id="registerdiv" class="col-3 d-none  text-center ">
+            <a class="btn mr-4" style="font-size: 1.2vw;" href="login.html" id="locindempty">
+                Sign in
+            </a>
+            
+        </div>
+        <!-- Logged in Desktop -->
+        <div id="loggeddiv" class="col-3 d-none d-md-block text-center">
+            <a class="btn" style="font-size: 30" id="locindempty">
+                <i class="fa fa-user-circle" aria-hidden="true"></i>
+            </a>
+            <a class="btn mr-4"  id="locindempty">
+                User1234
+            </a>
         </div>
 
     </nav>
