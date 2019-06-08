@@ -20,7 +20,7 @@
 </head>
 
 <body>
-    
+
     <nav class='navbar sticky-top navbar-expand-md navbar-light bg-white row shadow' id="divnav">
 
         <!--   Menu toggle    -->
@@ -31,7 +31,7 @@
         <!-- Location indicator mobile -->
         <div class="d-block d-md-none">
             <a class="navbar-brand mb-0 h1" href="#" id="locind">
-                    Theatre
+                Thtr
             </a>
         </div>
 
@@ -41,7 +41,7 @@
                 <img class="rounded" src="images/Logo.png">
             </a>
             <a class="navbar-brand mb-0 h1 ml-3" href="home.html" id="brandlogo">
-                Theatre
+                MovieThtr
             </a>
         </div>
 
@@ -55,7 +55,7 @@
         <!-- Empty div to center logo in mobile -->
         <div class="d-block d-md-none">
             <a class="navbar-brand mb-0 text-white d-block d-md-none" id="locindempty">
-                Movies
+                Thtr
             </a>
         </div>
 
@@ -81,13 +81,13 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="allMovies.html">All Categories</a>
-                        <a class="dropdown-item" href="allMovies.html">Most Popular</a>
+
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="allMovies.html">Action</a>
-                        <a class="dropdown-item" href="allMovies.html">Romantic</a>
-                        <a class="dropdown-item" href="allMovies.html">Superhero</a>
-                        <a class="dropdown-item" href="allMovies.html">Comedy</a>
-                        <a class="dropdown-item" href="allMovies.html">Drama</a>
+                        <a class="dropdown-item" href="allMovies.html?category=Action">Action</a>
+                        <a class="dropdown-item" href="allMovies.html?category=Romance">Romantic</a>
+                        <a class="dropdown-item" href="allMovies.html?category=SuperHero">Superhero</a>
+                        <a class="dropdown-item" href="allMovies.html?category=Comedy">Comedy</a>
+                        <a class="dropdown-item" href="allMovies.html?category=Drama">Drama</a>
                     </div>
                 </li>
                 <li class="col-3 nav-item dropdown px-2">
@@ -96,13 +96,13 @@
                         Locations
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="locations.html">Belgrade</a>
-                        <a class="dropdown-item" href="locations.html">Kragujevac</a>
-                        <a class="dropdown-item" href="locations.html">Kraljevo</a>
-                        <a class="dropdown-item" href="locations.html">Novi sad</a>
-                        <a class="dropdown-item" href="locations.html">Nis</a>
-                        <a class="dropdown-item" href="locations.html">Pristina</a>
-                        <a class="dropdown-item" href="locations.html">Subotica</a>
+                        <a class="dropdown-item" href="locations.html?location=Belgrade">Belgrade</a>
+                        <a class="dropdown-item" href="locations.html?location=Kragujevac">Kragujevac</a>
+                        <a class="dropdown-item" href="locations.html?location=Kraljevo">Kraljevo</a>
+                        <a class="dropdown-item" href="locations.html?location=Novi sad">Novi sad</a>
+                        <a class="dropdown-item" href="locations.html?location=Nis">Nis</a>
+                        <a class="dropdown-item" href="locations.html?location=Pristina">Pristina</a>
+                        <a class="dropdown-item" href="locations.html?location=Subotica">Subotica</a>
                     </div>
                 </li>
                 <li class="col-3 nav-item px-2">
@@ -124,7 +124,6 @@
         </div>
 
     </nav>
-
     <!-- Page body -->
     <div class="container-fluid row text-center my-4 mx-0 pr-0 " id="pageBody">
 
@@ -145,7 +144,7 @@
         <!-- City selector -->
         <div class="d-none d-md-block col-md-3" id="CategoryList">
             <h3 class="py-3">Cities</h3>
-            <ul class="list-group">
+            <ul class="list-group" id="lgroup">
                 <button type="button"
                     class="btn-light list-group-item list-group-item-action d-flex justify-content-between active">Belgrade
                     <i class="fa fa-caret-right" aria-hidden="true"></i>
@@ -236,18 +235,18 @@
                 e.preventDefault()
 
                 $that = $(this).find(":selected");
-                
+
                 changeCity($that);
 
             });
 
 
-            function changeCity(city){
+            function changeCity(city) {
                 var currCity = $("#currentCategory");
                 currCity.text(city.text());
 
-                
-                
+
+
                 switch (currCity.text().trim()) {
                     case "Belgrade":
                         removeLocations();
@@ -277,9 +276,9 @@
                         removeLocations();
                         addLocationList(locationList[6]);
                         break;
-                    
+
                     default:
-                    removeLocations();
+                        removeLocations();
                         addLocationList(locationList[0]);
                 }
             }
@@ -520,6 +519,38 @@
                 }
                 return a;
             }
+
+            function getUrlVars() {
+                var vars = {};
+                var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                    vars[key] = value;
+                });
+                return vars;
+            }
+
+            function getUrlParam(parameter, defaultvalue) {
+                var urlparameter = defaultvalue;
+                if (window.location.href.indexOf(parameter) > -1) {
+                    urlparameter = getUrlVars()[parameter];
+                }
+                return urlparameter;
+            }
+
+            // Selects location based on url param
+            jQuery(function ($) {
+
+                var check = getUrlParam('location', 'Belgrade')
+
+                var listButtons = $("#lgroup").children('button');
+
+                for (const element of listButtons) {
+                    if (element.innerText === check) {
+                        element.click();
+                    }else if(check==="Novi%20sad"&&element.innerText==="Novi sad"){
+                        element.click();
+                    }
+                }
+            });
 
 
         });
