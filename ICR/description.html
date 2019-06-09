@@ -141,7 +141,7 @@
     <div class="d-block d-md-none col-12 mx-0 px-0 mt-0 pt-0">
 
         <a href="#" data-toggle="modal" data-target=".bd-example-modal-lg-mobile">
-            <img class="card-img-bottom rounded img-flow" src="images/JW3Jumbo3.jpg" alt="Card image cap">
+            <img class="card-img-bottom rounded img-flow jumboPoster" src="images/JW3Jumbo3.jpg" alt="Card image cap">
         </a>
 
     </div>
@@ -154,7 +154,7 @@
             <div class="mx-2">
                 <div class="card">
                     <a href="#" data-toggle="modal" data-target=".bd-example-modal-lg">
-                        <img class="card-img-bottom rounded img-flow" src="images/JohnWickPoster.jpeg"
+                        <img class="card-img-bottom rounded img-flow poster" src="images/JohnWickPoster.jpeg"
                             alt="Card image cap"></a>
                     <div class="card-body ">
                         <div>
@@ -175,8 +175,9 @@
 
         <!-- Center column -->
         <div class="text-left col-5 d-none d-md-block ">
-            <h1 style="font-size: 3.2vw;" class="mb-5 mt-4">John Wick 3</h1>
-            <p class="my-5" style="font-size: 1.5vw;">In this third installment of the adrenaline-fueled action
+            <h1 class="title" style="font-size: 3.2vw;" class="mb-5 mt-4">John Wick 3</h1>
+            <p class="my-5 description" style="font-size: 1.5vw;">In this third installment of the adrenaline-fueled
+                action
                 franchise,
                 super-assassin John Wick (Reeves) returns with a $14 million price tag on his head and an army of
                 bounty-hunting killers on his trail.
@@ -185,13 +186,13 @@
             </p>
             <div class="row">
                 <div class="col-6">
-                    <p style="font-size: 1.2vw;"> <b> Released:</b> 25.05</p>
-                    <p style="font-size: 1.2vw;"><b>Lenght:</b> 2h 11m </p>
-                    <p style="font-size: 1.2vw;"><b>Rating:</b> R</p>
-                    <p style="font-size: 1.2vw;"><b>Critic Score:</b> 9/10</p>
+                    <p class="released" style="font-size: 1.2vw;"> <b> Released:</b> 25.05</p>
+                    <p class="length" style="font-size: 1.2vw;"><b>Lenght:</b> 2h 11m </p>
+                    <p class="rating" style="font-size: 1.2vw;"><b>Rating:</b> R</p>
+                    <p class="criticScore" style="font-size: 1.2vw;"><b>Critic Score:</b> 9/10</p>
                 </div>
                 <div class="col-6 justify-content-left text-left d-flex flex-wrap align-items-center">
-                    <a href="https://www.rottentomatoes.com/m/john_wick_chapter_3_parabellum">
+                    <a class="rtLink" href="https://www.rottentomatoes.com/m/john_wick_chapter_3_parabellum">
                         <img class="img-thumbnail " style="width: 30%" src="images/RT.png" alt="">
                     </a>
                 </div>
@@ -303,15 +304,15 @@
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">John Wick 3 Trailer</h5>
+                        <h5 class="modal-title trailer-title" id="exampleModalLabel">John Wick 3 Trailer</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
                         <div class="embed-responsive embed-responsive-16by9">
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/pU8-7BX9uxs"
-                                frameborder="0"
+                            <iframe class="trailer" width="560" height="315"
+                                src="https://www.youtube.com/embed/pU8-7BX9uxs" frameborder="0"
                                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen></iframe> </div>
                     </div>
@@ -325,7 +326,8 @@
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="embed-responsive embed-responsive-16by9">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/pU8-7BX9uxs" frameborder="0"
+                        <iframe class="trailer" width="560" height="315" src="https://www.youtube.com/embed/pU8-7BX9uxs"
+                            frameborder="0"
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
                     </div>
@@ -346,7 +348,7 @@
         <!-- Center column Mobile -->
         <div class="text-left col-12 d-block d-md-none ">
 
-            <p class="my-2">
+            <p class="desc my-2">
                 Super-assassin John Wick returns with a $14 million price tag on his head and an army of
                 bounty-hunting killers on his trail.
                 After killing a member of the shadowy international assassin's guild, the High Table,
@@ -354,13 +356,13 @@
             </p>
             <div class="row">
                 <div class="col-6">
-                    <p></p> <b> Released:</b> 25.05</p>
-                    <p><b>Lenght:</b> 2h 11m </p>
-                    <p><b>Rating:</b> R</p>
-                    <p><b>Critic Score:</b> 9/10</p>
+                    <p class="released"><b> Released:</b> 25.05</p>
+                    <p class="length"><b>Lenght:</b> 2h 11m </p>
+                    <p class="rating"><b>Rating:</b> R</p>
+                    <p class="criticScore"><b>Critic Score:</b> 9/10</p>
                 </div>
                 <div class="col-6 justify-content-left text-left d-flex flex-wrap align-items-center">
-                    <a href="https://www.rottentomatoes.com/m/john_wick_chapter_3_parabellum">
+                    <a class="rtLink" href="https://www.rottentomatoes.com/m/john_wick_chapter_3_parabellum">
                         <img class="img-thumbnail " style="width: 30%" src="images/RT.png" alt="">
                     </a>
                 </div>
@@ -373,6 +375,7 @@
 
     </div>
 
+    <script src="js/fullMovieList.js"></script>
     <script>
         $(document).ready(function () {
 
@@ -401,6 +404,8 @@
                 } else {
                     loginChange(true, check);
                 }
+
+
 
 
             });
@@ -432,6 +437,46 @@
                     }
                 });
 
+            }
+
+            // Movie check
+            jQuery(function ($) {
+                var check = getUrlParam('movie', 'jw');
+                changeMovie(check);
+            });
+
+
+            function changeMovie(id) {
+                for (const elem of fullMovieList) {
+                    if (elem.id === id) {
+                        $(".title").text(elem.title);
+                        $(".released").html("<b>Released: </b>" + elem.released);
+                        $(".length").html("<b>Length: </b>" + elem.lenght);
+                        $(".criticScore").html("<b>Critic Score: </b>" + elem.criticScore);
+                        $(".rating").html("<b>Rating: </b>" + elem.rating);
+                        $(".poster").attr("src", elem.poster);
+                        $(".jumboPoster").attr("src", elem.jumboPoster);
+                        $(".rtLink").attr("href", elem.rtLink);
+                        $(".trailer").attr("src", elem.trailer);
+                        $(".trailer-title").text(elem.title + " Trailer");
+                        $(".description").text(elem.description);
+                        $(".desc").text(elem.description);
+
+                        $('a').each(function () {
+                            let element = $(this);
+                            let href = element.attr('href');
+
+                            if (href !== undefined && href !== "#") {
+                                if (href.indexOf('?') > -1) {
+                                    element.attr('href', href + "&movie=" + id);
+                                } else {
+                                    element.attr('href', href + "?movie=" + id);
+                                }
+                            }
+                        });
+                    }
+
+                }
             }
 
 
