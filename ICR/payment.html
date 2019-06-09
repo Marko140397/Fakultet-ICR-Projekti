@@ -301,8 +301,8 @@
                     <form class="needs-validation" action="paymentSuccess.html" novalidate>
                         <div class="form-row justify-content-center">
                             <div class="form-group col-md-6 col-12">
-                                <label for="inputEmail">Enter email:</label>
-                                <input type="email" class="form-control" id="inputEmail" placeholder="email@gmail.com"  required>
+                                <label for="inputEmail2">Enter email:</label>
+                                <input type="email" class="form-control" id="inputEmail2" placeholder="email@gmail.com"  required>
                                 <div class="invalid-feedback">
                                         Please enter a valid email addres.
                                 </div>
@@ -428,6 +428,9 @@
                     $('#loggeddiv').attr('class', 'col-3 d-none d-md-block text-center');
                     $('#accountName').text(user);
                     changeHrefs(user);
+                    $("#inputEmail").attr('value',user+'@gmail.com');
+                    $("#inputEmail2").attr('value',user+'@gmail.com');
+                    
                 } else {
                     $('#registerdiv').attr('class', 'col-3 d-none d-md-block text-center');
                     $('#loggeddiv').attr('class', 'col-3 d-none text-center');

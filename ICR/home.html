@@ -143,7 +143,7 @@
                 <div class="col-1"></div>
                 <!-- Spinner -->
                 <div class="col-md-3 col-sm-12 form-group py-1">
-                    <select class="form-control-lg bg-light btn-block" name="" id="">
+                    <select class="form-control-lg bg-light btn-block" name="" id="spinn">
                         <option>Recommended Movies</option>
                         <option>Most Popular</option>
                         <option>Latest release</option>
@@ -587,6 +587,11 @@
                     });
     
                 }
+
+                $("#spinn").change(function () {
+                    $('.carousel').carousel('next');
+
+                });
     
     
     
