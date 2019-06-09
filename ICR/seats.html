@@ -21,6 +21,7 @@
 
 <body>
 
+   
     <nav class='navbar sticky-top navbar-expand-md navbar-light bg-white row shadow' id="divnav">
 
         <!--   Menu toggle    -->
@@ -59,9 +60,11 @@
             </a>
         </div>
 
-        <!-- Search Mobile -->
-        <div class="mr-4 d-block d-md-none" id="searchBtn">
-            <button class="btn btn-outline-dark" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+        <!-- Account Mobile -->
+        <div class="mr-4 d-block d-md-none">
+            <a id="logMobile" href="login.html" class="btn" style="font-size: 30" id="locindempty">
+                <i class="fa fa-user-circle" aria-hidden="true"></i>
+            </a>
         </div>
 
         <!-- Menu items -->
@@ -81,7 +84,7 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="allMovies.html">All Categories</a>
-                        
+
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="allMovies.html?category=Action">Action</a>
                         <a class="dropdown-item" href="allMovies.html?category=Romance">Romantic</a>
@@ -96,13 +99,13 @@
                         Locations
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="locations.html">Belgrade</a>
-                        <a class="dropdown-item" href="locations.html">Kragujevac</a>
-                        <a class="dropdown-item" href="locations.html">Kraljevo</a>
-                        <a class="dropdown-item" href="locations.html">Novi sad</a>
-                        <a class="dropdown-item" href="locations.html">Nis</a>
-                        <a class="dropdown-item" href="locations.html">Pristina</a>
-                        <a class="dropdown-item" href="locations.html">Subotica</a>
+                        <a class="dropdown-item" href="locations.html?location=Belgrade">Belgrade</a>
+                        <a class="dropdown-item" href="locations.html?location=Kragujevac">Kragujevac</a>
+                        <a class="dropdown-item" href="locations.html?location=Kraljevo">Kraljevo</a>
+                        <a class="dropdown-item" href="locations.html?location=Novi sad">Novi sad</a>
+                        <a class="dropdown-item" href="locations.html?location=Nis">Nis</a>
+                        <a class="dropdown-item" href="locations.html?location=Pristina">Pristina</a>
+                        <a class="dropdown-item" href="locations.html?location=Subotica">Subotica</a>
                     </div>
                 </li>
                 <li class="col-3 nav-item px-2">
@@ -114,13 +117,22 @@
             </ul>
         </div>
 
-        <!-- Search Desktop -->
-        <div class="col-3 d-none d-md-block">
-            <form class="form-inline">
-                <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-danger ml-1" type="submit"><i class="fa fa-search"
-                        aria-hidden="true"></i></button>
-            </form>
+
+        <!-- Register Desktop -->
+        <div id="registerdiv" class="col-3 d-none  text-center ">
+            <a class="btn mr-4" style="font-size: 1.2vw;" href="login.html" id="locindempty">
+                Sign in
+            </a>
+
+        </div>
+        <!-- Logged in Desktop -->
+        <div id="loggeddiv" class="col-3 d-none d-md-block text-center">
+            <a class="btn" style="font-size: 30" id="iconAccount">
+                <i class="fa fa-user-circle" aria-hidden="true"></i>
+            </a>
+            <a class="btn mr-4" id="accountName">
+                User1234
+            </a>
         </div>
 
     </nav>
@@ -613,6 +625,63 @@
                 totalM.text("Total: "+totalPrice+"$");
             }
 
+            function getUrlVars() {
+                var vars = {};
+                var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                    vars[key] = value;
+                });
+                return vars;
+            }
+
+            function getUrlParam(parameter, defaultvalue) {
+                var urlparameter = defaultvalue;
+                if (window.location.href.indexOf(parameter) > -1) {
+                    urlparameter = getUrlVars()[parameter];
+                }
+                return urlparameter;
+            }
+
+            // Logged in check
+            jQuery(function ($) {
+                var check = getUrlParam('user', 'false');
+
+                if (check === 'false') {
+                    loginChange(false, check);
+                } else {
+                    loginChange(true, check);
+                }
+
+
+            });
+
+            function loginChange(logged, user) {
+                if (logged) {
+                    $('#registerdiv').attr('class', 'col-3 d-none  text-center');
+                    $('#loggeddiv').attr('class', 'col-3 d-none d-md-block text-center');
+                    $('#accountName').text(user);
+                    changeHrefs(user);
+                } else {
+                    $('#registerdiv').attr('class', 'col-3 d-none d-md-block text-center');
+                    $('#loggeddiv').attr('class', 'col-3 d-none text-center');
+                }
+            }
+
+            function changeHrefs(user) {
+
+                $('a').each(function () {
+                    let element = $(this);
+                    let href = element.attr('href');
+
+                    if (href !== undefined && href !== "#") {
+                        if (href.indexOf('?') > -1) {
+                            element.attr('href', href + "&user=" + user);
+                        } else {
+                            element.attr('href', href + "?user=" + user);
+                        }
+                    }
+                });
+
+            }
 
 
         });

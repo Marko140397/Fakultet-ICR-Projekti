@@ -59,11 +59,11 @@
             </a>
         </div>
 
-        <!-- Search Mobile -->
-        <div class="mr-4 d-block d-md-none" >
-                <a id="logMobile" href="login.html" class="btn" style="font-size: 30" id="locindempty">
-                    <i class="fa fa-user-circle" aria-hidden="true"></i>
-                </a>
+        <!-- Account Mobile -->
+        <div class="mr-4 d-block d-md-none">
+            <a id="logMobile" href="login.html" class="btn" style="font-size: 30" id="locindempty">
+                <i class="fa fa-user-circle" aria-hidden="true"></i>
+            </a>
         </div>
 
         <!-- Menu items -->
@@ -116,25 +116,26 @@
             </ul>
         </div>
 
-        
+
         <!-- Register Desktop -->
         <div id="registerdiv" class="col-3 d-none  text-center ">
             <a class="btn mr-4" style="font-size: 1.2vw;" href="login.html" id="locindempty">
                 Sign in
             </a>
-            
+
         </div>
         <!-- Logged in Desktop -->
         <div id="loggeddiv" class="col-3 d-none d-md-block text-center">
-            <a class="btn" style="font-size: 30" id="locindempty">
+            <a class="btn" style="font-size: 30" id="iconAccount">
                 <i class="fa fa-user-circle" aria-hidden="true"></i>
             </a>
-            <a class="btn mr-4"  id="locindempty">
+            <a class="btn mr-4" id="accountName">
                 User1234
             </a>
         </div>
 
     </nav>
+    
     <!-- Page body -->
     <div class="container-fluid row text-center my-4 mx-0 pr-0 " id="pageBody">
 
@@ -557,11 +558,53 @@
                 for (const element of listButtons) {
                     if (element.innerText === check) {
                         element.click();
-                    }else if(check==="Novi%20sad"&&element.innerText==="Novi sad"){
+                    } else if (check === "Novi%20sad" && element.innerText === "Novi sad") {
                         element.click();
                     }
                 }
             });
+
+            // Logged in check
+            jQuery(function ($) {
+                var check = getUrlParam('user', 'false');
+
+                if (check === 'false') {
+                    loginChange(false, check);
+                } else {
+                    loginChange(true, check);
+                }
+
+
+            });
+
+            function loginChange(logged, user) {
+                if (logged) {
+                    $('#registerdiv').attr('class', 'col-3 d-none  text-center');
+                    $('#loggeddiv').attr('class', 'col-3 d-none d-md-block text-center');
+                    $('#accountName').text(user);
+                    changeHrefs(user);
+                } else {
+                    $('#registerdiv').attr('class', 'col-3 d-none d-md-block text-center');
+                    $('#loggeddiv').attr('class', 'col-3 d-none text-center');
+                }
+            }
+
+            function changeHrefs(user) {
+
+                $('a').each(function () {
+                    let element = $(this);
+                    let href = element.attr('href');
+
+                    if (href !== undefined && href !== "#") {
+                        if (href.indexOf('?') > -1) {
+                            element.attr('href', href + "&user=" + user);
+                        } else {
+                            element.attr('href', href + "?user=" + user);
+                        }
+                    }
+                });
+
+            }
 
 
         });
