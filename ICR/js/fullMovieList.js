@@ -81,7 +81,7 @@ var fullMovieList=[
             Cali Sheldon, Noelle Sheldon), Adelaide and her family return to their vacation home. When darkness falls.`,
         poster:"images/UsPoster.jpeg",
         rtLink:"https://www.rottentomatoes.com/m/us_2019",
-        jumboPoster:"images/UsPosterJumbo.jpg",
+        jumboPoster:"images/UsPosterJumbo2.jpg",
         trailer:"https://www.youtube.com/embed/1tzFRIQfwXg"
     },
     {   

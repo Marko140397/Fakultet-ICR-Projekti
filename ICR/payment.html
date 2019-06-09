@@ -140,9 +140,9 @@
 
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb bg-light">
-            <li class="breadcrumb-item"><a href="description.html">John Wick</a></li>
-            <li class="breadcrumb-item"><a href="buyTickets.html">Showings</a></li>
-            <li class="breadcrumb-item"><a href="seats.html">Seats</a></li>
+            <li class="breadcrumb-item"><a class="bread-title-link" href="description.html">John Wick</a></li>
+            <li class="breadcrumb-item"><a class="bread-link" href="buyTickets.html">Showings</a></li>
+            <li class="breadcrumb-item"><a class="bread-link2" href="seats.html">Seats</a></li>
             <li class="breadcrumb-item active" aria-current="page">Payment</li>
         </ol>
     </nav>
@@ -328,7 +328,7 @@
 
     </div>
 
-
+    <script src="js/fullMovieList.js"></script>
     <script>
         $(document).ready(function () {
 
@@ -453,6 +453,41 @@
                 });
 
             }
+
+
+            jQuery(function ($) {
+                var check = getUrlParam('movie', 'jw');
+                changeMovie(check);
+            });
+
+            function changeMovie(id) {
+                for (const elem of fullMovieList) {
+                    
+                    
+                    if (elem.id === id) {
+                        
+                        $(".bread-title-link").html(elem.title);
+                        $(".bread-title-link").attr("href","description.html?movie="+id);
+                        $(".bread-link").attr("href","buyTickets.html?movie="+id);                        
+                        $(".bread-link2").attr("href","seats.html?movie="+id);                        
+
+                        $('a').each(function () {
+                            let element = $(this);
+                            let href = element.attr('href');
+
+                            if (href !== undefined && href !== "#") {
+                                if (href.indexOf('?') > -1) {
+                                    element.attr('href', href + "&movie=" + id);
+                                } else {
+                                    element.attr('href', href + "?movie=" + id);
+                                }
+                            }
+                        });
+                    }
+
+                }
+            }
+
 
 
             

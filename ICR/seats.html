@@ -141,8 +141,8 @@
 
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb bg-light">
-            <li class="breadcrumb-item"><a href="description.html">John Wick</a></li>
-            <li class="breadcrumb-item"><a href="buyTickets.html">Showings</a></li>
+            <li class="breadcrumb-item"><a class="bread-title-link" href="description.html">John Wick</a></li>
+            <li class="breadcrumb-item"><a class="bread-link" href="buyTickets.html">Showings</a></li>
             <li class="breadcrumb-item active" aria-current="page">Seats</li>
         </ol>
     </nav>
@@ -161,7 +161,7 @@
         <div class="d-block d-md-none col-12 mx-1 px-0">
                 <div class="jumbotron bg-white shadow mx-1 py-3">
                         <div class="row justify-content-center text-center d-flex flex-wrap align-items-center" id="headingJumbo">
-                                <h3 class="col-6">John Wick 3</h3>
+                                <h3 class="col-6 title">John Wick 3</h3>
                                 <div class="col-6">
                                     <h4 class="px-0 py-0 mx-0 my-0">
                                         Hall 3
@@ -484,7 +484,7 @@
             <div class="d-none d-md-block col-4">
                 <div class="jumbotron bg-white shadow mx-3 py-3">
                     <div class="row justify-content-center text-center d-flex flex-wrap align-items-center" id="headingJumbo">
-                        <h3 class="col-6">John Wick 3</h3>
+                        <h3 class="col-6 title">John Wick 3</h3>
                         <div class="col-6">
                             <h4 class="px-0 py-0 mx-0 my-0">
                                 Hall 3
@@ -524,7 +524,7 @@
 
     </div>
 
-
+    <script src="js/fullMovieList.js"></script>
     <script>
         $(document).ready(function () {
 
@@ -681,6 +681,43 @@
                     }
                 });
 
+            }
+
+            jQuery(function ($) {
+                var check = getUrlParam('movie', 'jw');
+                changeMovie(check);
+            });
+
+            function changeMovie(id) {
+                for (const elem of fullMovieList) {
+                    
+                    
+                    if (elem.id === id) {
+                        
+                        $(".bread-title-link").html(elem.title);
+                        $(".bread-title-link").attr("href","description.html?movie="+id);
+                        $(".bread-link").attr("href","buyTickets.html?movie="+id);
+                        
+                        $(".title").text(elem.title);
+
+
+                        
+
+                        $('a').each(function () {
+                            let element = $(this);
+                            let href = element.attr('href');
+
+                            if (href !== undefined && href !== "#") {
+                                if (href.indexOf('?') > -1) {
+                                    element.attr('href', href + "&movie=" + id);
+                                } else {
+                                    element.attr('href', href + "?movie=" + id);
+                                }
+                            }
+                        });
+                    }
+
+                }
             }
 
 
