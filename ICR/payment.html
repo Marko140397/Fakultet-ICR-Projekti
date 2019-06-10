@@ -233,7 +233,7 @@
                     <div class="form-row ">
                         <div class="form-group col-6"">
                             <label for=" inputCreditCard">Credit Card Number</label>
-                            <input type="text" pattern="\d{16}" maxlength="16" class="form-control" id="inputCreditCard"
+                            <input type="text" pattern="\d{4}-\d{4}-\d{4}-\d{4}" maxlength="19" class="form-control" id="inputCreditCard"
                                 placeholder="1111-1111-1111-1111" required>
                                 <div class="invalid-feedback">
                                         Please enter a valid credit card number.
@@ -487,6 +487,19 @@
 
                 }
             }
+
+            $("#inputCreditCard").keyup(function(e){
+                var creditCard = $(this);
+                var creditLength = creditCard.val().length;
+                var code = e.keyCode;
+                if(creditLength === 4 && code!==8){
+                    creditCard.val(creditCard.val()+"-");
+                }else if(creditLength === 9 && code!==8){
+                    creditCard.val(creditCard.val()+"-");
+                }else if(creditLength === 14 && code!==8){
+                    creditCard.val(creditCard.val()+"-");
+                }
+            });
 
 
 
