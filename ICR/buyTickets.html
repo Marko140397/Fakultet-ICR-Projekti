@@ -1611,7 +1611,7 @@
                             let element = $(this);
                             let href = element.attr('href');
 
-                            if (href !== undefined && href !== "#") {
+                            if (href !== undefined && href !== "#" && href!=="#carouselId") {
                                 if (href.indexOf('?') > -1) {
                                     element.attr('href', href + "&movie=" + id);
                                 } else {

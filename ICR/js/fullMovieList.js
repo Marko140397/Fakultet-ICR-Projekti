@@ -82,7 +82,7 @@ var fullMovieList=[
         poster:"images/UsPoster.jpeg",
         rtLink:"https://www.rottentomatoes.com/m/us_2019",
         jumboPoster:"images/UsPosterJumbo2.jpg",
-        trailer:"https://www.youtube.com/embed/1tzFRIQfwXg"
+        trailer:"https://www.youtube.com/embed/1qEQmpprzSM"
     },
     {   
         id:"bk",
